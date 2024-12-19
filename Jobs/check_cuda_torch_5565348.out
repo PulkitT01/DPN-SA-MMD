@@ -1,0 +1,5 @@
+Checking PyTorch and CUDA configuration...
+PyTorch version: 2.5.1+cu124
+CUDA available: True
+CUDA version (PyTorch): 12.4
+GPU Device: NVIDIA A40
