@@ -661,16 +661,21 @@ class DPN_SA_Deep:
 
         #err_fact = np.mean(np.abs(y1_hat_np_b - np_y_f))
         #att = np.mean(np_y_f[t_np > 0]) - np.mean(np_y_f[(1 - t_np + e_np) > 1])
-        # Ensure mask shapes align with np_y_f
-        mask1 = t_np > 0
-        mask2 = (1 - t_np + e_np) > 1
-
+        t_np = np.array(T).flatten()
+        e_np = np.array(e).flatten()
+        np_y_f = np.array(y_f).flatten()
+        
+        # Ensure masks align with np_y_f
+        mask1 = (t_np > 0)
+        mask2 = ((1 - t_np + e_np) > 1)
+        
         if mask1.shape != np_y_f.shape or mask2.shape != np_y_f.shape:
-            raise ValueError("Boolean mask shapes do not align with np_y_f")
+            raise ValueError(f"Shapes mismatch - np_y_f: {np_y_f.shape}, mask1: {mask1.shape}, mask2: {mask2.shape}")
+        
+        att = np.mean(np_y_f[mask1]) - np.mean(np_y_f[mask2])
+
 
         err_fact = np.mean(np.abs(y1_hat_np_b - np_y_f))
-
-        att = np.mean(np_y_f[mask1]) - np.mean(np_y_f[mask2])
 
 
         eff_pred = y0_hat_np - y1_hat_np
