@@ -182,3 +182,83 @@ epoch: 29, Treated + Control loss: 791.0824096565409
 epoch: 39, Treated + Control loss: 787.1465813946985
 epoch: 49, Treated + Control loss: 772.781276516571
 epoch: 59, Treated + Control loss: 754.4077315881594
+epoch: 69, Treated + Control loss: 756.5788236092875
+epoch: 79, Treated + Control loss: 723.8929234184204
+epoch: 89, Treated + Control loss: 738.96816474095
+epoch: 99, Treated + Control loss: 754.5324043084377
+SAE all layer active start time: = 2024-12-19 21:21:15.736857
+SAE all layer active end time: = 2024-12-19 21:30:14.701225
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+ Treated Statistics ==>
+(237, 17)
+ Control Statistics ==>
+(2333, 17)
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_0_epoch_100_lr_0.0001.pth
+.. Training started ..
+cuda:0
+epoch: 9, Treated + Control loss: 843.6400885037701
+epoch: 19, Treated + Control loss: 795.4338502025298
+epoch: 29, Treated + Control loss: 797.2592901358983
+epoch: 39, Treated + Control loss: 784.5416246749916
+epoch: 49, Treated + Control loss: 773.194462446676
+epoch: 59, Treated + Control loss: 767.7523105646362
+epoch: 69, Treated + Control loss: 753.4905937913809
+epoch: 79, Treated + Control loss: 747.7844775715929
+epoch: 89, Treated + Control loss: 733.1687363932238
+epoch: 99, Treated + Control loss: 730.6782400551276
+SAE cur layer active start time: = 2024-12-19 21:30:14.701247
+SAE all layer active end time: = 2024-12-19 21:39:13.373153
+############### DCN Training using Logistic Regression ###############
+ Treated Statistics ==>
+(237, 17)
+ Control Statistics ==>
+(2333, 17)
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_0_epoch_100_lr_0.0001.pth
+.. Training started ..
+cuda:0
+epoch: 9, Treated + Control loss: 871.2207763910042
+epoch: 19, Treated + Control loss: 819.7306053793175
+epoch: 29, Treated + Control loss: 798.3854650412126
+epoch: 39, Treated + Control loss: 784.4009059730131
+epoch: 49, Treated + Control loss: 767.3532877254343
+epoch: 59, Treated + Control loss: 763.8940319874341
+epoch: 69, Treated + Control loss: 757.3731843141662
+epoch: 79, Treated + Control loss: 742.0100670996301
+epoch: 89, Treated + Control loss: 749.0904582360209
+epoch: 99, Treated + Control loss: 761.3235763885621
+Logistic Regression start time: = 2024-12-19 21:39:13.373180
+Logistic Regression end time: = 2024-12-19 21:48:06.893331
+############### DCN Training using Logistic Regression Lasso ###############
+ Treated Statistics ==>
+(237, 17)
+ Control Statistics ==>
+(2333, 17)
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_0_epoch_100_lr_0.0001.pth
+.. Training started ..
+cuda:0
+epoch: 9, Treated + Control loss: 876.2000889256965
+epoch: 19, Treated + Control loss: 830.6639218950088
+epoch: 29, Treated + Control loss: 794.8306811782954
+epoch: 39, Treated + Control loss: 803.1100789693791
+epoch: 49, Treated + Control loss: 768.4337488168563
+epoch: 59, Treated + Control loss: 757.0398578860634
+epoch: 69, Treated + Control loss: 769.2716746349603
+epoch: 79, Treated + Control loss: 762.6113282034504
+epoch: 89, Treated + Control loss: 753.123774061534
+epoch: 99, Treated + Control loss: 734.1051318361583
+Logistic Regression Lasso start time: = 2024-12-19 21:48:06.893373
+Logistic Regression Lasso end time: = 2024-12-19 21:57:01.089617
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+ Treated Statistics ==>
+(60, 17)
+ Control Statistics ==>
+(582, 17)
+.. Evaluation started ..
