@@ -35,6 +35,8 @@ import os
 
 
 class DCN_network:
+
+    @staticmethod
     def get_num_workers():
         """
         Dynamically determine the number of workers for DataLoader based on available CPU cores.
