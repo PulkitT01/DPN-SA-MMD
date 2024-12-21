@@ -32,6 +32,8 @@ import os
 
 
 class shallow_train:
+
+    @staticmethod
     def get_num_workers():
         """Dynamically determine the number of workers for DataLoader."""
         return max(1, os.cpu_count() // 2)
