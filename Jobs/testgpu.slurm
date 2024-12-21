@@ -1,27 +1,40 @@
 #!/bin/bash
 #SBATCH --partition=gpu-single       # GPU partition
 #SBATCH --gres=gpu:1                 # Request 1 GPU
-#SBATCH --time=00:10:00              # Max runtime
-#SBATCH --mem=4gb                    # Memory
-#SBATCH --job-name=check_cuda_torch  # Job name
-#SBATCH --output=check_cuda_torch_%j.out  # Standard output file
-#SBATCH --error=check_cuda_torch_%j.err   # Standard error file
+#SBATCH --time=08:00:00              # Max runtime
+#SBATCH --nodes=1                    # Number of nodes
+#SBATCH --cpus-per-task=4            # Number of CPU cores per task
+#SBATCH --mem=40gb                   # Memory allocation
+#SBATCH --job-name=propensity_job    # Job name
+#SBATCH --output=run_%j.out          # Standard output file
+#SBATCH --error=run_%j.err           # Standard error file
 
-# Load the correct CUDA module (11.6)
+# Load the CUDA module (replace with your CUDA version)
 module load devel/cuda/12.6
 
-# Activate your new virtual environment
+# Activate the Python virtual environment
 source /gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/bin/activate
 
-# Check CUDA and PyTorch compatibility
-python - << EOF
+# Move to the directory containing your script
+cd /gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs
+
+# Optional: Log GPU and CUDA information
+echo "Available GPUs:"
+nvidia-smi
+echo "CUDA version:"
+nvcc --version
+
+# Verify PyTorch and CUDA compatibility
+python -c "
 import torch
-print("Checking PyTorch and CUDA configuration...")
-print(f"PyTorch version: {torch.__version__}")
-print(f"CUDA available: {torch.cuda.is_available()}")
+print('PyTorch version:', torch.__version__)
+print('CUDA available:', torch.cuda.is_available())
 if torch.cuda.is_available():
-    print(f"CUDA version (PyTorch): {torch.version.cuda}")
-    print(f"GPU Device: {torch.cuda.get_device_name(0)}")
+    print('CUDA version:', torch.version.cuda)
+    print('CUDNN version:', torch.backends.cudnn.version())
+    print('Device name:', torch.cuda.get_device_name(0))
 else:
-    print("No GPU detected or CUDA is not available.")
-EOF
+    raise RuntimeError('CUDA is not available. Check your setup.')
+"
+
+
