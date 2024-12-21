@@ -28,14 +28,19 @@ import torch.optim as optim
 
 from shallow_net import shallow_net
 from Utils import Utils
+import os
 
 
 class shallow_train:
+    def get_num_workers():
+        """Dynamically determine the number of workers for DataLoader."""
+        return max(1, os.cpu_count() // 2)
+    
     @staticmethod
     def eval(eval_set, device, phase, sparse_classifier):
         print(".. Propensity score evaluation started using Sparse AE ..")
         sparse_classifier.eval()
-        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=4)
+        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=get_num_workers())
         total_correct = 0
         eval_set_size = 0
         prop_score_list = []
@@ -77,7 +82,7 @@ class shallow_train:
         BETA = train_parameters["weight_decay"]
 
         data_loader = torch.utils.data.DataLoader(train_set, batch_size=batch_size,
-                                                  shuffle=shuffle, num_workers=4)
+                                                  shuffle=shuffle, num_workers=get_num_workers())
 
         print("##### train e2e #########")
         sparse_classifier = self.__end_to_end_train_SAE(phase, device, epochs, data_loader, lr,
@@ -152,7 +157,7 @@ class shallow_train:
         print(".. Propensity score evaluation started using Sparse AE..")
 
         data_loader = torch.utils.data.DataLoader(train_set, batch_size=32,
-                                                  shuffle=True, num_workers=4)
+                                                  shuffle=True, num_workers=get_num_workers())
         criterion = nn.NLLLoss()
         optimizer = optim.Adam(sparse_classifier.parameters(), lr=0.01)
         for epoch in range(50):
