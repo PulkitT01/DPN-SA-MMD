@@ -37,6 +37,7 @@ class Sparse_Propensity_score:
     def __init__(self):
         self.sparse_classifier_e2e = None
 
+    @staticmethod
     def get_num_workers():
         """Determine the optimal number of workers for data loading."""
         return max(1, os.cpu_count() // 2)
