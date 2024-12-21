@@ -32,6 +32,8 @@ import os
 
 
 class Propensity_socre_network:
+    
+    @staticmethod
     def get_num_workers():
         """
         Dynamically determine the number of workers based on available CPU cores.
