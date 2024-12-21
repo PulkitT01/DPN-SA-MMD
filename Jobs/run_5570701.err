@@ -1,0 +1,45 @@
+/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 32 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 32 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/main_propensity_dropout.py", line 27, in <module>
+    from Graphs import Graphs
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Graphs.py", line 208, in <module>
+    Graphs().draw_scatter_plots()
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Graphs.py", line 43, in draw_scatter_plots
+    ps_list_SAE = self.__train_propensity_net_SAE(ps_train_set, device)
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Graphs.py", line 117, in __train_propensity_net_SAE
+    sae_classifier_stacked_cur_layer_active = ps_net_SAE.train(train_parameters_SAE, device, phase="train")
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Sparse_Propensity_score.py", line 132, in train
+    sparse_classifier = self.__end_to_end_train_SAE(phase, device, epochs,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Sparse_Propensity_score.py", line 164, in __end_to_end_train_SAE
+    sae_network_e2e = self.__train_SAE(epochs, device, data_loader_train,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Sparse_Propensity_score.py", line 237, in __train_SAE
+    for batch in data_loader:
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1465, in _next_data
+    return self._process_data(data)
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1491, in _process_data
+    data.reraise()
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/_utils.py", line 715, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 351, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/dataset.py", line 211, in __getitem__
+    return tuple(tensor[index] for tensor in self.tensors)
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/dataset.py", line 211, in <genexpr>
+    return tuple(tensor[index] for tensor in self.tensors)
+RuntimeError: CUDA error: initialization error
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+

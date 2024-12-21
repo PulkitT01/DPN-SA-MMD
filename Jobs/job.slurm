@@ -3,7 +3,7 @@
 #SBATCH --gres=gpu:1                 # Request 1 GPU
 #SBATCH --time=08:00:00              # Max runtime
 #SBATCH --nodes=1
-#SBATCH --ntasks=32
+#SBATCH --ntasks=8
 #SBATCH --mem=40gb                   # Memory
 #SBATCH --job-name=propensity_job    # Job name
 #SBATCH --output=run_%j.out   # Standard output file (%j will be replaced with the job ID)
