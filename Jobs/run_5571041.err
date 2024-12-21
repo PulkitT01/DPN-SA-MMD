@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/main_propensity_dropout.py", line 34, in <module>
+    Experiments().run_all_experiments(iterations=1, running_mode="original_data")
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Experiments.py", line 72, in run_all_experiments
+    trained_models = dp_sa.train_eval_DCN(iter_id,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/DPN_SA_Deep.py", line 46, in train_eval_DCN
+    self.__train_propensity_net_NN(ps_train_set,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/DPN_SA_Deep.py", line 324, in __train_propensity_net_NN
+    self.__train_DCN(data_loader_dict_train_NN, model_path, dL, device,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/DPN_SA_Deep.py", line 476, in __train_DCN
+    tensor_treated_train = self.create_tensors_from_tuple(data_loader_dict_train["treated_data"])
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/DPN_SA_Deep.py", line 505, in create_tensors_from_tuple
+    tensor = Utils.convert_to_tensor_DCN(np_df_X, np_ps_score,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Utils.py", line 60, in convert_to_tensor_DCN
+    tensor_y_f = torch.from_numpy(Y_f)
+TypeError: expected np.ndarray (got Tensor)
