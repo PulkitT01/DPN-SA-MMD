@@ -95,7 +95,7 @@ class Propensity_socre_network:
         input_nodes = eval_parameters["input_nodes"]
 
         network = Propensity_net_NN(phase, input_nodes).to(device)
-        network.load_state_dict(torch.load(model_path, map_location=device))
+        network.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
         network.eval()
         data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=1)
         total_correct = 0
