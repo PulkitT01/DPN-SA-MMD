@@ -9,8 +9,8 @@
 #SBATCH --output=run_%j.out   # Standard output file (%j will be replaced with the job ID)
 #SBATCH --error=run_%j.err    # Standard error file
 
-# Load the correct CUDA module (12.6)
-module load devel/cuda/12.6
+# Load the correct CUDA module (12.2)
+module load devel/cuda/12.2
 
 # Activate your new virtual environment
 source /gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/bin/activate
