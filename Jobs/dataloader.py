@@ -31,67 +31,122 @@ from Utils import Utils
 
 
 class DataLoader:
+    # def preprocess_for_graphs(self, train_path, iter_id=0):
+    #     train_arr = np.load(train_path)
+    #     np_train_X = train_arr['x'][:, :, iter_id]
+    #     print(np_train_X.shape)
+    #     np_train_T = Utils.convert_to_col_vector(train_arr['t'][:, iter_id])
+    #     np_train_e = Utils.convert_to_col_vector(train_arr['e'][:, iter_id])
+    #     np_train_yf = Utils.convert_to_col_vector(train_arr['yf'][:, iter_id])
+
+    #     train_X = np.concatenate((np_train_X, np_train_e, np_train_yf), axis=1)
+
+    #     # np_test_X = test_arr['x'][:, :, iter_id]
+    #     # np_test_T = Utils.convert_to_col_vector(test_arr['t'][:, iter_id])
+    #     # np_test_e = Utils.convert_to_col_vector(test_arr['e'][:, iter_id])
+    #     # np_test_yf = Utils.convert_to_col_vector(test_arr['yf'][:, iter_id])
+    #     #
+    #     # test_X = np.concatenate((np_test_X, np_test_e, np_test_yf), axis=1)
+
+    #     print("Numpy Train Statistics:")
+    #     print(train_X.shape)
+    #     print(np_train_T.shape)
+
+    #     # print(" Numpy Test Statistics:")
+    #     # print(test_X.shape)
+    #     # print(np_test_T.shape)
+
+    #     # X -> x1.. x17, e, yf -> (19, 1)
+    #     return train_X, np_train_T,
+
+    ############################################################################
+    # Using GPU for computations
     def preprocess_for_graphs(self, train_path, iter_id=0):
+        # Set the device to GPU if available
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
         train_arr = np.load(train_path)
-        np_train_X = train_arr['x'][:, :, iter_id]
-        print(np_train_X.shape)
-        np_train_T = Utils.convert_to_col_vector(train_arr['t'][:, iter_id])
-        np_train_e = Utils.convert_to_col_vector(train_arr['e'][:, iter_id])
-        np_train_yf = Utils.convert_to_col_vector(train_arr['yf'][:, iter_id])
+        np_train_X = torch.tensor(train_arr['x'][:, :, iter_id], dtype=torch.float32).to(device)
+        np_train_T = torch.tensor(Utils.convert_to_col_vector(train_arr['t'][:, iter_id]), dtype=torch.float32).to(device)
+        np_train_e = torch.tensor(Utils.convert_to_col_vector(train_arr['e'][:, iter_id]), dtype=torch.float32).to(device)
+        np_train_yf = torch.tensor(Utils.convert_to_col_vector(train_arr['yf'][:, iter_id]), dtype=torch.float32).to(device)
 
-        train_X = np.concatenate((np_train_X, np_train_e, np_train_yf), axis=1)
-
-        # np_test_X = test_arr['x'][:, :, iter_id]
-        # np_test_T = Utils.convert_to_col_vector(test_arr['t'][:, iter_id])
-        # np_test_e = Utils.convert_to_col_vector(test_arr['e'][:, iter_id])
-        # np_test_yf = Utils.convert_to_col_vector(test_arr['yf'][:, iter_id])
-        #
-        # test_X = np.concatenate((np_test_X, np_test_e, np_test_yf), axis=1)
+        train_X = torch.cat((np_train_X, np_train_e, np_train_yf), dim=1)
 
         print("Numpy Train Statistics:")
         print(train_X.shape)
         print(np_train_T.shape)
 
-        # print(" Numpy Test Statistics:")
-        # print(test_X.shape)
-        # print(np_test_T.shape)
-
-        # X -> x1.. x17, e, yf -> (19, 1)
-        return train_X, np_train_T,
+        return train_X, np_train_T
+    #############################################################################
 
     def prep_process_all_data(self, csv_path):
         df = pd.read_csv(os.path.join(os.path.dirname(__file__), csv_path), header=None)
         np_covariates_X, np_treatment_Y = self.__convert_to_numpy(df)
         return np_covariates_X, np_treatment_Y
 
+    # def preprocess_data_from_csv(self, train_path, test_path, iter_id):
+    #     train_arr = np.load(train_path)
+    #     test_arr = np.load(test_path)
+    #     np_train_X = train_arr['x'][:, :, iter_id]
+    #     print(np_train_X.shape)
+    #     np_train_T = Utils.convert_to_col_vector(train_arr['t'][:, iter_id])
+    #     np_train_e = Utils.convert_to_col_vector(train_arr['e'][:, iter_id])
+    #     np_train_yf = Utils.convert_to_col_vector(train_arr['yf'][:, iter_id])
+
+    #     train_X = np.concatenate((np_train_X, np_train_e, np_train_yf), axis=1)
+
+    #     np_test_X = test_arr['x'][:, :, iter_id]
+    #     np_test_T = Utils.convert_to_col_vector(test_arr['t'][:, iter_id])
+    #     np_test_e = Utils.convert_to_col_vector(test_arr['e'][:, iter_id])
+    #     np_test_yf = Utils.convert_to_col_vector(test_arr['yf'][:, iter_id])
+
+    #     test_X = np.concatenate((np_test_X, np_test_e, np_test_yf), axis=1)
+
+    #     print("Numpy Train Statistics:")
+    #     print(train_X.shape)
+    #     print(np_train_T.shape)
+
+    #     print(" Numpy Test Statistics:")
+    #     print(test_X.shape)
+    #     print(np_test_T.shape)
+
+    #     # X -> x1.. x17, e, yf -> (19, 1)
+    #     return train_X, test_X, np_train_T, np_test_T
+
+    ####################################################################
+    # Move computations to GPU
     def preprocess_data_from_csv(self, train_path, test_path, iter_id):
+        # Set the device to GPU if available
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
         train_arr = np.load(train_path)
         test_arr = np.load(test_path)
-        np_train_X = train_arr['x'][:, :, iter_id]
-        print(np_train_X.shape)
-        np_train_T = Utils.convert_to_col_vector(train_arr['t'][:, iter_id])
-        np_train_e = Utils.convert_to_col_vector(train_arr['e'][:, iter_id])
-        np_train_yf = Utils.convert_to_col_vector(train_arr['yf'][:, iter_id])
 
-        train_X = np.concatenate((np_train_X, np_train_e, np_train_yf), axis=1)
+        np_train_X = torch.tensor(train_arr['x'][:, :, iter_id], dtype=torch.float32).to(device)
+        np_train_T = torch.tensor(Utils.convert_to_col_vector(train_arr['t'][:, iter_id]), dtype=torch.float32).to(device)
+        np_train_e = torch.tensor(Utils.convert_to_col_vector(train_arr['e'][:, iter_id]), dtype=torch.float32).to(device)
+        np_train_yf = torch.tensor(Utils.convert_to_col_vector(train_arr['yf'][:, iter_id]), dtype=torch.float32).to(device)
 
-        np_test_X = test_arr['x'][:, :, iter_id]
-        np_test_T = Utils.convert_to_col_vector(test_arr['t'][:, iter_id])
-        np_test_e = Utils.convert_to_col_vector(test_arr['e'][:, iter_id])
-        np_test_yf = Utils.convert_to_col_vector(test_arr['yf'][:, iter_id])
+        train_X = torch.cat((np_train_X, np_train_e, np_train_yf), dim=1)
 
-        test_X = np.concatenate((np_test_X, np_test_e, np_test_yf), axis=1)
+        np_test_X = torch.tensor(test_arr['x'][:, :, iter_id], dtype=torch.float32).to(device)
+        np_test_T = torch.tensor(Utils.convert_to_col_vector(test_arr['t'][:, iter_id]), dtype=torch.float32).to(device)
+        np_test_e = torch.tensor(Utils.convert_to_col_vector(test_arr['e'][:, iter_id]), dtype=torch.float32).to(device)
+        np_test_yf = torch.tensor(Utils.convert_to_col_vector(test_arr['yf'][:, iter_id]), dtype=torch.float32).to(device)
+
+        test_X = torch.cat((np_test_X, np_test_e, np_test_yf), dim=1)
 
         print("Numpy Train Statistics:")
         print(train_X.shape)
         print(np_train_T.shape)
 
-        print(" Numpy Test Statistics:")
+        print("Numpy Test Statistics:")
         print(test_X.shape)
         print(np_test_T.shape)
 
-        # X -> x1.. x17, e, yf -> (19, 1)
         return train_X, test_X, np_train_T, np_test_T
+    #############################################################################
 
     def preprocess_data_from_csv_augmented(self, csv_path, split_size):
         # print(".. Data Loading synthetic..")
@@ -110,9 +165,20 @@ class DataLoader:
         # print("np_covariates_Y_test: {0}".format(np_covariates_Y_test.shape))
         return np_covariates_X_train, np_covariates_X_test, np_covariates_Y_train, np_covariates_Y_test
 
+    # @staticmethod
+    # def convert_to_tensor(ps_np_covariates_X, ps_np_treatment_Y):
+    #     return Utils.convert_to_tensor(ps_np_covariates_X, ps_np_treatment_Y)
+
+    ##################################################################
     @staticmethod
     def convert_to_tensor(ps_np_covariates_X, ps_np_treatment_Y):
-        return Utils.convert_to_tensor(ps_np_covariates_X, ps_np_treatment_Y)
+        # Set the device to GPU if available
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        tensor_x = torch.tensor(ps_np_covariates_X, dtype=torch.float32).to(device)
+        tensor_y = torch.tensor(ps_np_treatment_Y, dtype=torch.float32).to(device)
+        return torch.utils.data.TensorDataset(tensor_x, tensor_y)
+    #######################################################################
 
     @staticmethod
     def convert_to_tensor_DCN(np_df_X,
@@ -124,35 +190,76 @@ class DataLoader:
                                            np_df_Y_f,
                                            np_df_Y_cf)
 
-    def prepare_tensor_for_DCN(self, ps_np_covariates_X, ps_np_treatment_Y, ps_list,
-                               is_synthetic):
-        # print("ps_np_covariates_X: {0}".format(ps_np_covariates_X.shape))
-        # print("ps_np_treatment_Y: {0}".format(ps_np_treatment_Y.shape))
-        X = Utils.concat_np_arr(ps_np_covariates_X, ps_np_treatment_Y, axis=1)
+    # def prepare_tensor_for_DCN(self, ps_np_covariates_X, ps_np_treatment_Y, ps_list,
+    #                            is_synthetic):
+    #     # print("ps_np_covariates_X: {0}".format(ps_np_covariates_X.shape))
+    #     # print("ps_np_treatment_Y: {0}".format(ps_np_treatment_Y.shape))
+    #     X = Utils.concat_np_arr(ps_np_covariates_X, ps_np_treatment_Y, axis=1)
 
-        # col of X -> x1 .. x25, Y_f, Y_cf, T, Ps
-        X = Utils.concat_np_arr(X, np.array([ps_list]).T, axis=1)
-        # print("Big X: {0}".format(X.shape))
-        df_X = pd.DataFrame(X)
+    #     # col of X -> x1 .. x25, Y_f, Y_cf, T, Ps
+    #     X = Utils.concat_np_arr(X, np.array([ps_list]).T, axis=1)
+    #     # print("Big X: {0}".format(X.shape))
+    #     df_X = pd.DataFrame(X)
+    #     treated_df_X, treated_ps_score, treated_df_Y_f, treated_df_e = \
+    #         self.__preprocess_data_for_DCN(df_X, treatment_index=1,
+    #                                        is_synthetic=is_synthetic)
+
+    #     control_df_X, control_ps_score, control_df_Y_f, control_df_e = \
+    #         self.__preprocess_data_for_DCN(df_X, treatment_index=0,
+    #                                        is_synthetic=is_synthetic)
+
+    #     np_treated_df_X, np_treated_ps_score, np_treated_df_Y_f, np_treated_df_e = \
+    #         self.__convert_to_numpy_DCN(treated_df_X, treated_ps_score, treated_df_Y_f, treated_df_e)
+
+    #     np_control_df_X, np_control_ps_score, np_control_df_Y_f, np_control_df_e = \
+    #         self.__convert_to_numpy_DCN(control_df_X, control_ps_score, control_df_Y_f, control_df_e)
+
+    #     # np_treated_df_Y_f = Utils.convert_to_col_vector()
+
+    #     print(" Treated Statistics ==>")
+    #     print(np_treated_df_X.shape)
+    #     print(" Control Statistics ==>")
+    #     print(np_control_df_X.shape)
+
+    #     return {
+    #         "treated_data": (np_treated_df_X, np_treated_ps_score,
+    #                          np_treated_df_Y_f, np_treated_df_e),
+    #         "control_data": (np_control_df_X, np_control_ps_score,
+    #                          np_control_df_Y_f, np_control_df_e)
+    #     }
+
+    #####################################################################
+    @staticmethod
+    def prepare_tensor_for_DCN(ps_np_covariates_X, ps_np_treatment_Y, ps_list, is_synthetic):
+        # Set the device to GPU if available
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        # Concatenate covariates and treatment labels
+        X = torch.cat((ps_np_covariates_X, ps_np_treatment_Y), dim=1).to(device)
+        ps_tensor = torch.tensor(ps_list, dtype=torch.float32).to(device).unsqueeze(1)
+        X = torch.cat((X, ps_tensor), dim=1)
+
+        df_X = pd.DataFrame(X.cpu().numpy())  # Move to CPU for DataFrame compatibility
         treated_df_X, treated_ps_score, treated_df_Y_f, treated_df_e = \
-            self.__preprocess_data_for_DCN(df_X, treatment_index=1,
-                                           is_synthetic=is_synthetic)
+            DataLoader.__preprocess_data_for_DCN(df_X, treatment_index=1, is_synthetic=is_synthetic)
 
         control_df_X, control_ps_score, control_df_Y_f, control_df_e = \
-            self.__preprocess_data_for_DCN(df_X, treatment_index=0,
-                                           is_synthetic=is_synthetic)
+            DataLoader.__preprocess_data_for_DCN(df_X, treatment_index=0, is_synthetic=is_synthetic)
 
-        np_treated_df_X, np_treated_ps_score, np_treated_df_Y_f, np_treated_df_e = \
-            self.__convert_to_numpy_DCN(treated_df_X, treated_ps_score, treated_df_Y_f, treated_df_e)
+        # Convert processed data back to tensors for GPU usage
+        np_treated_df_X = torch.tensor(treated_df_X.to_numpy(), dtype=torch.float32).to(device)
+        np_treated_ps_score = torch.tensor(treated_ps_score.to_numpy(), dtype=torch.float32).to(device)
+        np_treated_df_Y_f = torch.tensor(treated_df_Y_f.to_numpy(), dtype=torch.float32).to(device)
+        np_treated_df_e = torch.tensor(treated_df_e.to_numpy(), dtype=torch.float32).to(device)
 
-        np_control_df_X, np_control_ps_score, np_control_df_Y_f, np_control_df_e = \
-            self.__convert_to_numpy_DCN(control_df_X, control_ps_score, control_df_Y_f, control_df_e)
+        np_control_df_X = torch.tensor(control_df_X.to_numpy(), dtype=torch.float32).to(device)
+        np_control_ps_score = torch.tensor(control_ps_score.to_numpy(), dtype=torch.float32).to(device)
+        np_control_df_Y_f = torch.tensor(control_df_Y_f.to_numpy(), dtype=torch.float32).to(device)
+        np_control_df_e = torch.tensor(control_df_e.to_numpy(), dtype=torch.float32).to(device)
 
-        # np_treated_df_Y_f = Utils.convert_to_col_vector()
-
-        print(" Treated Statistics ==>")
+        print("Treated Statistics ==>")
         print(np_treated_df_X.shape)
-        print(" Control Statistics ==>")
+        print("Control Statistics ==>")
         print(np_control_df_X.shape)
 
         return {
@@ -161,6 +268,7 @@ class DataLoader:
             "control_data": (np_control_df_X, np_control_ps_score,
                              np_control_df_Y_f, np_control_df_e)
         }
+##########################################################################
 
     @staticmethod
     def __convert_to_numpy(df):
