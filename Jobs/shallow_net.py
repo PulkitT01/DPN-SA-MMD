@@ -45,15 +45,8 @@ class shallow_net(nn.Module):
                                          nn.Linear(in_features=17, out_features=17))
 
     def forward(self, x):
-        if torch.cuda.is_available():
-            x = x.float().cuda()
-        else:
-            x = x.float()
-
-        # encoding
+        x = x.float().to(next(self.parameters()).device)
         x = self.encoder(x)
-
         if self.training_mode == "train":
-            # decoding
             x = self.decoder(x)
         return x
