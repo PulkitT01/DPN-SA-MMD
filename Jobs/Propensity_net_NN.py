@@ -44,6 +44,7 @@ class Propensity_net_NN(nn.Module):
         #     x = x.float().cuda()
         # else:
         #     x = x.float()
+        x = x.float().to(torch.device("cuda" if torch.cuda.is_available() else "cpu"))
 
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))

@@ -26,6 +26,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
+import os
 
 from Sparse_Propensity_net import Sparse_Propensity_net
 from Sparse_Propensity_net_shallow import Sparse_Propensity_net_shallow
@@ -36,11 +37,15 @@ class Sparse_Propensity_score:
     def __init__(self):
         self.sparse_classifier_e2e = None
 
+    def get_num_workers():
+        """Determine the optimal number of workers for data loading."""
+        return max(1, os.cpu_count() // 2)
+
     @staticmethod
     def eval(eval_set, device, phase, sparse_classifier):
         print(".. Propensity score evaluation started using Sparse AE ..")
         sparse_classifier.eval()
-        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=1)
+        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=get_num_workers())
         total_correct = 0
         eval_set_size = 0
         prop_score_list = []
@@ -54,7 +59,7 @@ class Sparse_Propensity_score:
 
             eval_set_size += covariates.size(0)
 
-            treatment_pred = sparse_classifier(covariates).to(device)
+            treatment_pred = sparse_classifier(covariates)
             treatment_pred_prob = F.softmax(treatment_pred, dim=1)
             # print(treatment_pred_prob)
             treatment_pred_prob = treatment_pred_prob.squeeze()
@@ -74,7 +79,7 @@ class Sparse_Propensity_score:
                                   sparse_classifier):
         print(".. Propensity score evaluation started using Sparse AE ..")
         sparse_classifier.eval()
-        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=1)
+        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=get_num_workers())
         total_correct = 0
         eval_set_size = 0
         prop_score_list = []
@@ -120,7 +125,7 @@ class Sparse_Propensity_score:
         BETA = train_parameters["weight_decay"]
 
         data_loader_train = torch.utils.data.DataLoader(train_set, batch_size=batch_size,
-                                                        shuffle=shuffle, num_workers=1)
+                                                        shuffle=shuffle, num_workers=get_num_workers())
 
         print("##### train e2e #########")
         sparse_classifier = self.__end_to_end_train_SAE(phase, device, epochs,
@@ -258,7 +263,7 @@ class Sparse_Propensity_score:
         print(".. Propensity score evaluation started using Sparse AE..")
 
         data_loader_train = torch.utils.data.DataLoader(train_set, batch_size=32,
-                                                        shuffle=True, num_workers=1)
+                                                        shuffle=True, num_workers=get_num_workers())
 
         criterion = nn.NLLLoss()
         optimizer = optim.Adam(sparse_classifier.parameters(), lr=0.01)

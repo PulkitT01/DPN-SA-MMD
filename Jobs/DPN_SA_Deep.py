@@ -40,6 +40,7 @@ class DPN_SA_Deep:
                        is_synthetic=False):
         print("----------- Training and evaluation phase ------------")
         ps_train_set = dL.convert_to_tensor(np_covariates_X_train, np_covariates_Y_train)
+        ps_train_set = ps_train_set.to(device)
 
         # using NN
         start = datetime.now()

@@ -30,9 +30,17 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 from DCN import DCN
+import os
+
 
 
 class DCN_network:
+    def get_num_workers():
+        """
+        Dynamically determine the number of workers for DataLoader based on available CPU cores.
+        """
+        return max(1, os.cpu_count() // 2)  # Use half the available cores, at least 1
+
     def train(self, train_parameters, device):
         epochs = train_parameters["epochs"]
         treated_batch_size = train_parameters["treated_batch_size"]
@@ -52,12 +60,12 @@ class DCN_network:
         treated_data_loader_train = torch.utils.data.DataLoader(treated_set_train,
                                                                 batch_size=treated_batch_size,
                                                                 shuffle=shuffle,
-                                                                num_workers=1)
+                                                                num_workers=get_num_workers())
 
         control_data_loader_train = torch.utils.data.DataLoader(control_set_train,
                                                                 batch_size=control_batch_size,
                                                                 shuffle=shuffle,
-                                                                num_workers=1)
+                                                                num_workers=get_num_workers())
 
         network = DCN(training_flag=True, input_nodes=input_nodes).to(device)
         optimizer = optim.Adam(network.parameters(), lr=lr)
@@ -170,9 +178,9 @@ class DCN_network:
         network.load_state_dict(torch.load(model_path, map_location=device))
         network.eval()
         treated_data_loader = torch.utils.data.DataLoader(treated_set,
-                                                          shuffle=False, num_workers=1)
+                                                          shuffle=False, num_workers=get_num_workers())
         control_data_loader = torch.utils.data.DataLoader(control_set,
-                                                          shuffle=False, num_workers=1)
+                                                          shuffle=False, num_workers=get_num_workers())
 
         err_treated_list = []
         err_control_list = []
