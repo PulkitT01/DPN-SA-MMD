@@ -37,7 +37,12 @@ class Propensity_socre_LR:
             lr_model = LogisticRegression(penalty="l1", solver="liblinear")
 
         # fit the model with data
-        lr_model.fit(np_covariates_X_train, np_covariates_Y_train.ravel())
+        # lr_model.fit(np_covariates_X_train, np_covariates_Y_train.ravel())
+        lr_model.fit(
+            np_covariates_X_train.cpu().numpy(),  # Move to CPU and convert to NumPy
+            np_covariates_Y_train.cpu().numpy().ravel()  # Move to CPU, convert, and flatten
+        )
+
         proba = lr_model.predict_proba(np_covariates_X_train)[:, -1].tolist()
         return proba, lr_model
 
