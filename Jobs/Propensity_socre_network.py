@@ -56,11 +56,9 @@ class Propensity_socre_network:
         print("Saved model path: {0}".format(model_save_path))
 
         network = Propensity_net_NN(phase, input_nodes).to(device)
-        # Dynamically determine num_workers
-        num_workers = get_num_workers()
 
         data_loader_train = torch.utils.data.DataLoader(train_set, batch_size=32,
-                                                        shuffle=shuffle, num_workers=num_workers)
+                                                        shuffle=shuffle, num_workers=0)
 
         min_accuracy = 0
         phases = ['train', 'val']
@@ -111,9 +109,7 @@ class Propensity_socre_network:
         network = Propensity_net_NN(phase, input_nodes).to(device)
         network.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
         network.eval()
-        # Dynamically determine num_workers
-        num_workers = get_num_workers()
-        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=num_workers)
+        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=0)
         total_correct = 0
         eval_set_size = 0
         prop_score_list = []
@@ -147,9 +143,7 @@ class Propensity_socre_network:
         network = Propensity_net_NN(phase, input_nodes).to(device)
         network.load_state_dict(torch.load(model_path, map_location=device))
         network.eval()
-        # Dynamically determine num_workers
-        num_workers = get_num_workers()
-        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=num_workers)
+        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=0)
         total_correct = 0
         eval_set_size = 0
         prop_score_list = []
