@@ -42,7 +42,7 @@ class shallow_train:
     def eval(eval_set, device, phase, sparse_classifier):
         print(".. Propensity score evaluation started using Sparse AE ..")
         sparse_classifier.eval()
-        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=shallow_train.get_num_workers())
+        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=0)
         total_correct = 0
         eval_set_size = 0
         prop_score_list = []
@@ -84,7 +84,7 @@ class shallow_train:
         BETA = train_parameters["weight_decay"]
 
         data_loader = torch.utils.data.DataLoader(train_set, batch_size=batch_size,
-                                                  shuffle=shuffle, num_workers=shallow_train.get_num_workers())
+                                                  shuffle=shuffle, num_workers=0)
 
         print("##### train e2e #########")
         sparse_classifier = self.__end_to_end_train_SAE(phase, device, epochs, data_loader, lr,
@@ -159,7 +159,7 @@ class shallow_train:
         print(".. Propensity score evaluation started using Sparse AE..")
 
         data_loader = torch.utils.data.DataLoader(train_set, batch_size=32,
-                                                  shuffle=True, num_workers=shallow_train.get_num_workers())
+                                                  shuffle=True, num_workers=0)
         criterion = nn.NLLLoss()
         optimizer = optim.Adam(sparse_classifier.parameters(), lr=0.01)
         for epoch in range(50):
