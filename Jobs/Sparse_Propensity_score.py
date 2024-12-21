@@ -46,7 +46,7 @@ class Sparse_Propensity_score:
     def eval(eval_set, device, phase, sparse_classifier):
         print(".. Propensity score evaluation started using Sparse AE ..")
         sparse_classifier.eval()
-        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=get_num_workers())
+        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=Sparse_Propensity_score.get_num_workers())
         total_correct = 0
         eval_set_size = 0
         prop_score_list = []
@@ -80,7 +80,7 @@ class Sparse_Propensity_score:
                                   sparse_classifier):
         print(".. Propensity score evaluation started using Sparse AE ..")
         sparse_classifier.eval()
-        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=get_num_workers())
+        data_loader = torch.utils.data.DataLoader(eval_set, shuffle=False, num_workers=Sparse_Propensity_score.get_num_workers())
         total_correct = 0
         eval_set_size = 0
         prop_score_list = []
@@ -126,7 +126,7 @@ class Sparse_Propensity_score:
         BETA = train_parameters["weight_decay"]
 
         data_loader_train = torch.utils.data.DataLoader(train_set, batch_size=batch_size,
-                                                        shuffle=shuffle, num_workers=get_num_workers())
+                                                        shuffle=shuffle, num_workers=Sparse_Propensity_score.get_num_workers())
 
         print("##### train e2e #########")
         sparse_classifier = self.__end_to_end_train_SAE(phase, device, epochs,
@@ -264,7 +264,7 @@ class Sparse_Propensity_score:
         print(".. Propensity score evaluation started using Sparse AE..")
 
         data_loader_train = torch.utils.data.DataLoader(train_set, batch_size=32,
-                                                        shuffle=True, num_workers=get_num_workers())
+                                                        shuffle=True, num_workers=Sparse_Propensity_score.get_num_workers())
 
         criterion = nn.NLLLoss()
         optimizer = optim.Adam(sparse_classifier.parameters(), lr=0.01)
