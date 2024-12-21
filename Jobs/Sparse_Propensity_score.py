@@ -26,6 +26,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
+import os
 
 from Sparse_Propensity_net import Sparse_Propensity_net
 from Sparse_Propensity_net_shallow import Sparse_Propensity_net_shallow
