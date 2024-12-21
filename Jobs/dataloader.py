@@ -67,10 +67,17 @@ class DataLoader:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         train_arr = np.load(train_path)
-        np_train_X = torch.tensor(train_arr['x'][:, :, iter_id], dtype=torch.float32).to(device)
-        np_train_T = torch.tensor(Utils.convert_to_col_vector(train_arr['t'][:, iter_id]), dtype=torch.float32).to(device)
-        np_train_e = torch.tensor(Utils.convert_to_col_vector(train_arr['e'][:, iter_id]), dtype=torch.float32).to(device)
-        np_train_yf = torch.tensor(Utils.convert_to_col_vector(train_arr['yf'][:, iter_id]), dtype=torch.float32).to(device)
+        np_train_X = train_arr['x'][:, :, iter_id]
+        np_train_X = np_train_X.to(device) if isinstance(np_train_X, torch.Tensor) else torch.tensor(np_train_X, dtype=torch.float32).to(device)
+        
+        np_train_T = Utils.convert_to_col_vector(train_arr['t'][:, iter_id])
+        np_train_T = np_train_T.to(device) if isinstance(np_train_T, torch.Tensor) else torch.tensor(np_train_T, dtype=torch.float32).to(device)
+        
+        np_train_e = Utils.convert_to_col_vector(train_arr['e'][:, iter_id])
+        np_train_e = np_train_e.to(device) if isinstance(np_train_e, torch.Tensor) else torch.tensor(np_train_e, dtype=torch.float32).to(device)
+        
+        np_train_yf = Utils.convert_to_col_vector(train_arr['yf'][:, iter_id])
+        np_train_yf = np_train_yf.to(device) if isinstance(np_train_yf, torch.Tensor) else torch.tensor(np_train_yf, dtype=torch.float32).to(device)
 
         train_X = torch.cat((np_train_X, np_train_e, np_train_yf), dim=1)
 
@@ -124,17 +131,31 @@ class DataLoader:
         train_arr = np.load(train_path)
         test_arr = np.load(test_path)
 
-        np_train_X = torch.tensor(train_arr['x'][:, :, iter_id], dtype=torch.float32).to(device)
-        np_train_T = torch.tensor(Utils.convert_to_col_vector(train_arr['t'][:, iter_id]), dtype=torch.float32).to(device)
-        np_train_e = torch.tensor(Utils.convert_to_col_vector(train_arr['e'][:, iter_id]), dtype=torch.float32).to(device)
-        np_train_yf = torch.tensor(Utils.convert_to_col_vector(train_arr['yf'][:, iter_id]), dtype=torch.float32).to(device)
+        np_train_X = train_arr['x'][:, :, iter_id]
+        np_train_X = np_train_X.to(device) if isinstance(np_train_X, torch.Tensor) else torch.tensor(np_train_X, dtype=torch.float32).to(device)
+        
+        np_train_T = Utils.convert_to_col_vector(train_arr['t'][:, iter_id])
+        np_train_T = np_train_T.to(device) if isinstance(np_train_T, torch.Tensor) else torch.tensor(np_train_T, dtype=torch.float32).to(device)
+        
+        np_train_e = Utils.convert_to_col_vector(train_arr['e'][:, iter_id])
+        np_train_e = np_train_e.to(device) if isinstance(np_train_e, torch.Tensor) else torch.tensor(np_train_e, dtype=torch.float32).to(device)
+        
+        np_train_yf = Utils.convert_to_col_vector(train_arr['yf'][:, iter_id])
+        np_train_yf = np_train_yf.to(device) if isinstance(np_train_yf, torch.Tensor) else torch.tensor(np_train_yf, dtype=torch.float32).to(device)
 
         train_X = torch.cat((np_train_X, np_train_e, np_train_yf), dim=1)
 
-        np_test_X = torch.tensor(test_arr['x'][:, :, iter_id], dtype=torch.float32).to(device)
-        np_test_T = torch.tensor(Utils.convert_to_col_vector(test_arr['t'][:, iter_id]), dtype=torch.float32).to(device)
-        np_test_e = torch.tensor(Utils.convert_to_col_vector(test_arr['e'][:, iter_id]), dtype=torch.float32).to(device)
-        np_test_yf = torch.tensor(Utils.convert_to_col_vector(test_arr['yf'][:, iter_id]), dtype=torch.float32).to(device)
+        np_test_X = test_arr['x'][:, :, iter_id]
+        np_test_X = np_test_X.to(device) if isinstance(np_test_X, torch.Tensor) else torch.tensor(np_test_X, dtype=torch.float32).to(device)
+        
+        np_test_T = Utils.convert_to_col_vector(test_arr['t'][:, iter_id])
+        np_test_T = np_test_T.to(device) if isinstance(np_test_T, torch.Tensor) else torch.tensor(np_test_T, dtype=torch.float32).to(device)
+        
+        np_test_e = Utils.convert_to_col_vector(test_arr['e'][:, iter_id])
+        np_test_e = np_test_e.to(device) if isinstance(np_test_e, torch.Tensor) else torch.tensor(np_test_e, dtype=torch.float32).to(device)
+        
+        np_test_yf = Utils.convert_to_col_vector(test_arr['yf'][:, iter_id])
+        np_test_yf = np_test_yf.to(device) if isinstance(np_test_yf, torch.Tensor) else torch.tensor(np_test_yf, dtype=torch.float32).to(device)
 
         test_X = torch.cat((np_test_X, np_test_e, np_test_yf), dim=1)
 
@@ -176,8 +197,9 @@ class DataLoader:
         # Set the device to GPU if available
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-        tensor_x = torch.tensor(ps_np_covariates_X, dtype=torch.float32).to(device)
-        tensor_y = torch.tensor(ps_np_treatment_Y, dtype=torch.float32).to(device)
+        tensor_x = ps_np_covariates_X.to(device) if isinstance(ps_np_covariates_X, torch.Tensor) else torch.tensor(ps_np_covariates_X, dtype=torch.float32).to(device)
+        tensor_y = ps_np_treatment_Y.to(device) if isinstance(ps_np_treatment_Y, torch.Tensor) else torch.tensor(ps_np_treatment_Y, dtype=torch.float32).to(device)
+
         return torch.utils.data.TensorDataset(tensor_x, tensor_y)
     #######################################################################
 
@@ -237,7 +259,7 @@ class DataLoader:
 
         # Concatenate covariates and treatment labels
         X = torch.cat((ps_np_covariates_X, ps_np_treatment_Y), dim=1).to(device)
-        ps_tensor = torch.tensor(ps_list, dtype=torch.float32).to(device).unsqueeze(1)
+        ps_tensor = ps_list.to(device).unsqueeze(1) if isinstance(ps_list, torch.Tensor) else torch.tensor(ps_list, dtype=torch.float32).to(device).unsqueeze(1)
         X = torch.cat((X, ps_tensor), dim=1)
 
         df_X = pd.DataFrame(X.cpu().numpy())  # Move to CPU for DataFrame compatibility
@@ -248,15 +270,15 @@ class DataLoader:
             DataLoader.__preprocess_data_for_DCN(df_X, treatment_index=0, is_synthetic=is_synthetic)
 
         # Convert processed data back to tensors for GPU usage
-        np_treated_df_X = torch.tensor(treated_df_X.to_numpy(), dtype=torch.float32).to(device)
-        np_treated_ps_score = torch.tensor(treated_ps_score.to_numpy(), dtype=torch.float32).to(device)
-        np_treated_df_Y_f = torch.tensor(treated_df_Y_f.to_numpy(), dtype=torch.float32).to(device)
-        np_treated_df_e = torch.tensor(treated_df_e.to_numpy(), dtype=torch.float32).to(device)
-
-        np_control_df_X = torch.tensor(control_df_X.to_numpy(), dtype=torch.float32).to(device)
-        np_control_ps_score = torch.tensor(control_ps_score.to_numpy(), dtype=torch.float32).to(device)
-        np_control_df_Y_f = torch.tensor(control_df_Y_f.to_numpy(), dtype=torch.float32).to(device)
-        np_control_df_e = torch.tensor(control_df_e.to_numpy(), dtype=torch.float32).to(device)
+        np_treated_df_X = treated_df_X.to(device) if isinstance(treated_df_X, torch.Tensor) else torch.tensor(treated_df_X.to_numpy(), dtype=torch.float32).to(device)
+        np_treated_ps_score = treated_ps_score.to(device) if isinstance(treated_ps_score, torch.Tensor) else torch.tensor(treated_ps_score.to_numpy(), dtype=torch.float32).to(device)
+        np_treated_df_Y_f = treated_df_Y_f.to(device) if isinstance(treated_df_Y_f, torch.Tensor) else torch.tensor(treated_df_Y_f.to_numpy(), dtype=torch.float32).to(device)
+        np_treated_df_e = treated_df_e.to(device) if isinstance(treated_df_e, torch.Tensor) else torch.tensor(treated_df_e.to_numpy(), dtype=torch.float32).to(device)
+        
+        np_control_df_X = control_df_X.to(device) if isinstance(control_df_X, torch.Tensor) else torch.tensor(control_df_X.to_numpy(), dtype=torch.float32).to(device)
+        np_control_ps_score = control_ps_score.to(device) if isinstance(control_ps_score, torch.Tensor) else torch.tensor(control_ps_score.to_numpy(), dtype=torch.float32).to(device)
+        np_control_df_Y_f = control_df_Y_f.to(device) if isinstance(control_df_Y_f, torch.Tensor) else torch.tensor(control_df_Y_f.to_numpy(), dtype=torch.float32).to(device)
+        np_control_df_e = control_df_e.to(device) if isinstance(control_df_e, torch.Tensor) else torch.tensor(control_df_e.to_numpy(), dtype=torch.float32).to(device)
 
         print("Treated Statistics ==>")
         print(np_treated_df_X.shape)
