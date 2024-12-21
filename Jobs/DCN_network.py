@@ -62,12 +62,12 @@ class DCN_network:
         treated_data_loader_train = torch.utils.data.DataLoader(treated_set_train,
                                                                 batch_size=treated_batch_size,
                                                                 shuffle=shuffle,
-                                                                num_workers=DCN_network.get_num_workers())
+                                                                num_workers=0)
 
         control_data_loader_train = torch.utils.data.DataLoader(control_set_train,
                                                                 batch_size=control_batch_size,
                                                                 shuffle=shuffle,
-                                                                num_workers=DCN_network.get_num_workers())
+                                                                num_workers=0)
 
         network = DCN(training_flag=True, input_nodes=input_nodes).to(device)
         optimizer = optim.Adam(network.parameters(), lr=lr)
@@ -180,9 +180,9 @@ class DCN_network:
         network.load_state_dict(torch.load(model_path, map_location=device))
         network.eval()
         treated_data_loader = torch.utils.data.DataLoader(treated_set,
-                                                          shuffle=False, num_workers=DCN_network.get_num_workers())
+                                                          shuffle=False, num_workers=0)
         control_data_loader = torch.utils.data.DataLoader(control_set,
-                                                          shuffle=False, num_workers=DCN_network.get_num_workers())
+                                                          shuffle=False, num_workers=0)
 
         err_treated_list = []
         err_control_list = []
