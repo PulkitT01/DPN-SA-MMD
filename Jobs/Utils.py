@@ -80,6 +80,10 @@ class Utils:
         tensor_y_f = Y_f
         tensor_t = t
         tensor_e = e
+        print("tensor_x size:", tensor_x.size())
+        print("tensor_ps_score size:", tensor_ps_score.size())
+        print("tensor_y_f size:", tensor_y_f.size())
+
         processed_dataset = torch.utils.data.TensorDataset(tensor_x, tensor_ps_score,
                                                            tensor_y_f, tensor_t,
                                                            tensor_e)
