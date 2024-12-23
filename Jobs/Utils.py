@@ -76,10 +76,10 @@ class Utils:
     @staticmethod
     def convert_to_tensor_DCN_test(X, ps_score, Y_f, t, e):
         tensor_x = torch.stack([torch.Tensor(i) for i in X])
-        tensor_ps_score = torch.from_numpy(ps_score)
-        tensor_y_f = torch.from_numpy(Y_f)
-        tensor_t = torch.from_numpy(t)
-        tensor_e = torch.from_numpy(e)
+        tensor_ps_score = ps_score
+        tensor_y_f = Y_f
+        tensor_t = t
+        tensor_e = e
         processed_dataset = torch.utils.data.TensorDataset(tensor_x, tensor_ps_score,
                                                            tensor_y_f, tensor_t,
                                                            tensor_e)
