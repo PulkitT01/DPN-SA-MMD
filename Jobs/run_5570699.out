@@ -1,8 +1,0 @@
-Numpy Train Statistics:
-torch.Size([2570, 19])
-torch.Size([2570, 1])
-############### Propensity Score SAE net Training ###############
-.. Training started ..
-##### train e2e #########
-Training mode: train
------ Training SAE -----

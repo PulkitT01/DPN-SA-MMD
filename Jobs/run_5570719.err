@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/main_propensity_dropout.py", line 34, in <module>
-    Experiments().run_all_experiments(iterations=1, running_mode="original_data")
-  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Experiments.py", line 72, in run_all_experiments
-    trained_models = dp_sa.train_eval_DCN(iter_id,
-  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/DPN_SA_Deep.py", line 43, in train_eval_DCN
-    ps_train_set = ps_train_set.to(device)
-AttributeError: 'TensorDataset' object has no attribute 'to'
