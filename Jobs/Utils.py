@@ -75,19 +75,27 @@ class Utils:
 
     @staticmethod
     def convert_to_tensor_DCN_test(X, ps_score, Y_f, t, e):
-        tensor_x = torch.stack([torch.Tensor(i) for i in X])
-        tensor_ps_score = ps_score
-        tensor_y_f = Y_f
-        tensor_t = t
-        tensor_e = e
-        print("tensor_x size:", tensor_x.size())
-        print("tensor_ps_score size:", tensor_ps_score.size())
-        print("tensor_y_f size:", tensor_y_f.size())
-
-        processed_dataset = torch.utils.data.TensorDataset(tensor_x, tensor_ps_score,
-                                                           tensor_y_f, tensor_t,
-                                                           tensor_e)
+        # Convert inputs to tensors if necessary
+        tensor_x = torch.stack([torch.Tensor(i) for i in X]) if not isinstance(X, torch.Tensor) else X
+        tensor_ps_score = torch.tensor(ps_score, dtype=torch.float32) if not isinstance(ps_score, torch.Tensor) else ps_score
+        tensor_y_f = torch.tensor(Y_f, dtype=torch.float32) if not isinstance(Y_f, torch.Tensor) else Y_f
+        tensor_t = torch.tensor(t, dtype=torch.float32) if not isinstance(t, torch.Tensor) else t
+        tensor_e = torch.tensor(e, dtype=torch.float32) if not isinstance(e, torch.Tensor) else tensor_e
+    
+        # Ensure sizes match
+        min_size = min(
+            tensor_x.size(0), tensor_ps_score.size(0), tensor_y_f.size(0), tensor_t.size(0), tensor_e.size(0)
+        )
+        tensor_x = tensor_x[:min_size]
+        tensor_ps_score = tensor_ps_score[:min_size]
+        tensor_y_f = tensor_y_f[:min_size]
+        tensor_t = tensor_t[:min_size]
+        tensor_e = tensor_e[:min_size]
+    
+        # Create dataset
+        processed_dataset = torch.utils.data.TensorDataset(tensor_x, tensor_ps_score, tensor_y_f, tensor_t, tensor_e)
         return processed_dataset
+
 
     @staticmethod
     def concat_np_arr(X, Y, axis=1):
