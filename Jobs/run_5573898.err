@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/main_propensity_dropout.py", line 34, in <module>
+    Experiments().run_all_experiments(iterations=1, running_mode="original_data")
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Experiments.py", line 85, in run_all_experiments
+    reply = dp_sa.test_DCN(iter_id,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/DPN_SA_Deep.py", line 124, in test_DCN
+    NN_policy_risk, NN_err_fact = self.__test_DCN_NN(iter_id,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/DPN_SA_Deep.py", line 530, in __test_DCN_NN
+    policy_risk, err_fact = self.__do_test_DCN(data_loader_dict_NN,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/DPN_SA_Deep.py", line 619, in __do_test_DCN
+    Utils.create_tensors_from_tuple_test(data_loader_dict["treated_data"], t_1)
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Utils.py", line 71, in create_tensors_from_tuple_test
+    tensor = Utils.convert_to_tensor_DCN_test(np_df_X, np_ps_score,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/Utils.py", line 87, in convert_to_tensor_DCN_test
+    processed_dataset = torch.utils.data.TensorDataset(tensor_x, tensor_ps_score,
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/dataset.py", line 205, in __init__
+    assert all(
+  File "/gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/lib/python3.10/site-packages/torch/utils/data/dataset.py", line 206, in <genexpr>
+    tensors[0].size(0) == tensor.size(0) for tensor in tensors
+TypeError: 'int' object is not callable
