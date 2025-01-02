@@ -80,7 +80,7 @@ class Utils:
         tensor_ps_score = torch.tensor(ps_score, dtype=torch.float32) if not isinstance(ps_score, torch.Tensor) else ps_score
         tensor_y_f = torch.tensor(Y_f, dtype=torch.float32) if not isinstance(Y_f, torch.Tensor) else Y_f
         tensor_t = torch.tensor(t, dtype=torch.float32) if not isinstance(t, torch.Tensor) else t
-        tensor_e = torch.tensor(e, dtype=torch.float32) if not isinstance(e, torch.Tensor) else tensor_e
+        tensor_e = torch.tensor(e, dtype=torch.float32) if not isinstance(e, torch.Tensor) else e
     
         # Ensure sizes match
         min_size = min(
