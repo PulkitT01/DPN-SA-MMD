@@ -177,7 +177,8 @@ class DCN_network:
         control_set = eval_parameters["control_set"]
         model_path = eval_parameters["model_save_path"]
         network = DCN(training_flag=False, input_nodes=input_nodes).to(device)
-        network.load_state_dict(torch.load(model_path, map_location=device))
+        # Add weights_only=True to get rid of the warning
+        network.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
         network.eval()
         treated_data_loader = torch.utils.data.DataLoader(treated_set,
                                                           shuffle=False, num_workers=0)
