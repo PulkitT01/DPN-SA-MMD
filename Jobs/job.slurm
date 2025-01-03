@@ -4,7 +4,7 @@
 #SBATCH --time=03:00:00              # Max runtime
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
-#SBATCH --mem=40gb                   # Memory
+#SBATCH --mem=8gb                    # Memory
 #SBATCH --job-name=propensity_job    # Job name
 #SBATCH --output=run_%j.out   # Standard output file (%j will be replaced with the job ID)
 #SBATCH --error=run_%j.err    # Standard error file
