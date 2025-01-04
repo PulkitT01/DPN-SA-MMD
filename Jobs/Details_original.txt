@@ -128,4 +128,26 @@ Using Logistic Regression, policy risk: 0.2811111111111111, SD: 0.0
 -------------------------------------------------
 Using Lasso Logistic Regression, bias att: 0.2595238095238095, SD: 0.0
 Using Lasso Logistic Regression, policy risk: 0.37615740740740744, SD: 0.0
+##################################################{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1}
+
+Iter: 0, NN_bias_att: 0.17619047619047618,  SAE_e2e_bias_att: 0.14285714285714285,  SAE_stacked_all_layer_active_bias_att: 0.10952380952380952,  SAE_stacked_cur_layer_active_bias_att: 0.19285714285714287, LR_bias_att: 0.17619047619047618, LR_Lasso_bias_att: 0.20952380952380953, NN_policy_risk: 0.3048986486486487, SAE_e2e_policy_risk: 0.3048986486486487,  SAE_stacked_all_layer_active_policy_risk: 0.29926801801801795, SAE_stacked_cur_layer_active_policy_risk: 0.28395061728395055, LR_policy_risk: 0.2816154970760234, LR_Lasso_policy_risk: 0.27625570776255703Iter: 1, NN_bias_att: 0.29047619047619044,  SAE_e2e_bias_att: 0.32380952380952377,  SAE_stacked_all_layer_active_bias_att: 0.2738095238095238,  SAE_stacked_cur_layer_active_bias_att: 0.32380952380952377, LR_bias_att: 0.5904761904761904, LR_Lasso_bias_att: 0.3571428571428571, NN_policy_risk: 0.35416666666666674, SAE_e2e_policy_risk: 0.3329918032786885,  SAE_stacked_all_layer_active_policy_risk: 0.33611111111111114, SAE_stacked_cur_layer_active_policy_risk: 0.3329918032786885, LR_policy_risk: 0.3032879818594105, LR_Lasso_policy_risk: 0.36531986531986527Iter: 2, NN_bias_att: 0.012099213551119148,  SAE_e2e_bias_att: 0.04718693284936476,  SAE_stacked_all_layer_active_bias_att: 0.06473079249848757,  SAE_stacked_cur_layer_active_bias_att: 0.012099213551119148, LR_bias_att: 0.029643073200241954, LR_Lasso_bias_att: 0.04718693284936476, NN_policy_risk: 0.3044117647058824, SAE_e2e_policy_risk: 0.3088235294117647,  SAE_stacked_all_layer_active_policy_risk: 0.2579365079365079, SAE_stacked_cur_layer_active_policy_risk: 0.2856481481481481, LR_policy_risk: 0.30661764705882355, LR_Lasso_policy_risk: 0.3088235294117647Iter: 3, NN_bias_att: 0.10104250200481146,  SAE_e2e_bias_att: 0.1182838813151563,  SAE_stacked_all_layer_active_bias_att: 0.04931836407377699,  SAE_stacked_cur_layer_active_bias_att: 0.15276663993584594, LR_bias_att: 0.03207698476343216, LR_Lasso_bias_att: 0.014835605453087333, NN_policy_risk: 0.2101266788766788, SAE_e2e_policy_risk: 0.2081575246132208,  SAE_stacked_all_layer_active_policy_risk: 0.19827279202279202, SAE_stacked_cur_layer_active_policy_risk: 0.21212121212121215, LR_policy_risk: 0.20544733044733043, LR_Lasso_policy_risk: 0.2136075949367089Iter: 4, NN_bias_att: 0.1884882985452246,  SAE_e2e_bias_att: 0.051233396584440274,  SAE_stacked_all_layer_active_bias_att: 0.12966476913345987,  SAE_stacked_cur_layer_active_bias_att: 0.28652751423149914, LR_bias_att: 0.11005692599620498, LR_Lasso_bias_att: 0.20809614168247947, NN_policy_risk: 0.15593434343434343, SAE_e2e_policy_risk: 0.18888888888888888,  SAE_stacked_all_layer_active_policy_risk: 0.20877285513361454, SAE_stacked_cur_layer_active_policy_risk: 0.15204678362573099, LR_policy_risk: 0.2094618055555556, LR_Lasso_policy_risk: 0.16861979166666663
+##################################################
+
+Using NN, bias att: 0.15365933615356436, SD: 0.09300253767122485
+Using NN, policy risk: 0.265907620466444, SD: 0.0721084790358387
+-------------------------------------------------
+Using SAE E2E, bias att: 0.1366741754831256, SD: 0.1007017019631571
+Using SAE E2E, policy risk: 0.2687520789682423, SD: 0.05846172588441924
+-------------------------------------------------
+Using SAE stacked all layer active, bias att: 0.12540945180781154, SD: 0.07970545283047599
+Using SAE stacked all layer active,  policy risk: 0.2600722568444087, SD: 0.0524853864303059
+-------------------------------------------------
+Using SAE stacked cur layer active, bias att: 0.19361200687702615, SD: 0.10972738298487641
+Using SAE stacked cur layer active, policy risk: 0.253351712891546, SD: 0.253351712891546
+-------------------------------------------------
+Using Logistic Regression, bias att: 0.18768873012530912, SD: 0.208609726541812
+Using Logistic Regression, policy risk: 0.26128605239942876, SD: 0.04480204750625159
+-------------------------------------------------
+Using Lasso Logistic Regression, bias att: 0.16735706933031966, SD: 0.12422560919181719
+Using Lasso Logistic Regression, policy risk: 0.26652529781951245, SD: 0.06932526127539786
 ##################################################
