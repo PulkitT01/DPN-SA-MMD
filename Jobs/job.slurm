@@ -12,10 +12,11 @@
 # Load the correct CUDA module (12.1)
 module load devel/cuda/12.1
 
-# Activate your new virtual environment
-source /gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs/venv/bin/activate
+# Activate the Python virtual environment
+source /home/tu/tu_tu/tu_wwdth01/DPN-SA-MMD/Jobs/venv/bin/activate
 
-cd /gpfs/bwfor/home/tu/tu_tu/tu_wwdth01/DPN-SA/Jobs
+# Move to the directory containing your script
+cd /home/tu/tu_tu/tu_wwdth01/DPN-SA-MMD/Jobs/
 
 python main_propensity_dropout.py
 
