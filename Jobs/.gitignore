@@ -2,5 +2,4 @@
 *.ipynb
 _pycache_/
 *.pyc
-*.pth
 /venv/
