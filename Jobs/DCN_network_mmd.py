@@ -11,20 +11,28 @@ import os
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def MMD(x, y, kernel="rbf"):
-    """Emprical maximum mean discrepancy. The lower the result
-       the more evidence that distributions are the same.
     """
-    xx, yy, zz = torch.mm(x, x.t()), torch.mm(y, y.t()), torch.mm(x, y.t())
-    rx = (xx.diag().unsqueeze(0).expand_as(xx))
-    ry = (yy.diag().unsqueeze(0).expand_as(yy))
+    Empirical Maximum Mean Discrepancy (MMD) between two samples x and y.
+    Works for x of shape [n, d] and y of shape [m, d].
+    """
+    # Compute dot products
+    xx = torch.mm(x, x.t())  # [n, n]
+    yy = torch.mm(y, y.t())  # [m, m]
+    zz = torch.mm(x, y.t())  # [n, m]
     
-    dxx = rx.t() + rx - 2. * xx 
-    dyy = ry.t() + ry - 2. * yy 
-    dxy = rx.t() + ry - 2. * zz 
+    # Compute squared norms for each row in x and y
+    rx = (x ** 2).sum(dim=1, keepdim=True)  # shape [n, 1]
+    ry = (y ** 2).sum(dim=1, keepdim=True)  # shape [m, 1]
     
-    XX = torch.zeros(xx.shape).to(device)
-    YY = torch.zeros(xx.shape).to(device)
-    XY = torch.zeros(xx.shape).to(device)
+    # Compute pairwise squared Euclidean distances:
+    dxx = rx + rx.t() - 2.0 * xx  # [n, n]
+    dyy = ry + ry.t() - 2.0 * yy  # [m, m]
+    dxy = rx + ry.t() - 2.0 * zz  # [n, m]
+    
+    # Initialize kernel sums
+    XX = torch.zeros_like(dxx).to(device)
+    YY = torch.zeros_like(dyy).to(device)
+    XY = torch.zeros_like(dxy).to(device)
     
     if kernel == "multiscale":
         bandwidth_range = [0.2, 0.5, 0.9, 1.3]
@@ -32,15 +40,14 @@ def MMD(x, y, kernel="rbf"):
             XX += a**2 * (a**2 + dxx)**-1
             YY += a**2 * (a**2 + dyy)**-1
             XY += a**2 * (a**2 + dxy)**-1
-            
     elif kernel == "rbf":
         bandwidth_range = [10, 15, 20, 50]
         for a in bandwidth_range:
-            XX += torch.exp(-0.5*dxx/a)
-            YY += torch.exp(-0.5*dyy/a)
-            XY += torch.exp(-0.5*dxy/a)
-
-    return torch.mean(XX + YY - 2. * XY)
+            XX += torch.exp(-0.5 * dxx / a)
+            YY += torch.exp(-0.5 * dyy / a)
+            XY += torch.exp(-0.5 * dxy / a)
+    
+    return torch.mean(XX + YY - 2.0 * XY)
 
 class DCN_network:
 
