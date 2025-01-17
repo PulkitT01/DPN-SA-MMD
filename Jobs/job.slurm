@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --partition=gpu-single       # GPU partition
 #SBATCH --gres=gpu:1                 # Request 1 GPU
-#SBATCH --time=08:00:00              # Max runtime
+#SBATCH --time=01:00:00              # Max runtime
 #SBATCH --nodes=1
 #SBATCH --ntasks=2
 #SBATCH --mem=4gb                    # Memory
@@ -18,6 +18,6 @@ source /home/tu/tu_tu/tu_wwdth01/DPN-SA-MMD/Jobs/venv/bin/activate
 # Move to the directory containing your script
 cd /home/tu/tu_tu/tu_wwdth01/DPN-SA-MMD/Jobs/
 
-python main_propensity_dropout.py
+python main_mmd.py
 
 
