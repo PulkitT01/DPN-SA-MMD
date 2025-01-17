@@ -47,7 +47,7 @@ def MMD(x, y, kernel="rbf"):
             YY += torch.exp(-0.5 * dyy / a)
             XY += torch.exp(-0.5 * dxy / a)
     
-    return torch.mean(XX + YY - 2.0 * XY)
+    return XX.mean() + YY.mean() - 2.0 * XY.mean()
 
 class DCN_network:
 
