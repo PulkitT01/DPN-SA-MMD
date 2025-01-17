@@ -368,53 +368,53 @@ class Experiments:
         run_parameters = {}
         if running_mode == "original_data":
             run_parameters["input_nodes"] = 17
-            run_parameters["consolidated_file_path"] = "./MSE/Results_consolidated.csv"
+            run_parameters["consolidated_file_path"] = "./MSE/Results_consolidated_mmd.csv"
 
             # NN
-            run_parameters["nn_prop_file"] = "./MSE/NN_Prop_score_{0}.csv"
-            run_parameters["nn_iter_file"] = "./MSE/ITE/ITE_NN_iter_{0}.csv"
+            run_parameters["nn_prop_file"] = "./MSE/NN_Prop_score_{0}_mmd.csv"
+            run_parameters["nn_iter_file"] = "./MSE/ITE/ITE_NN_iter_{0}_mmd.csv"
             # SAE
-            run_parameters["sae_e2e_prop_file"] = "./MSE/SAE_E2E_Prop_score_{0}.csv"
-            run_parameters["sae_stacked_all_prop_file"] = "./MSE/SAE_stacked_all_Prop_score_{0}.csv"
-            run_parameters["sae_stacked_cur_prop_file"] = "./MSE/SAE_stacked_cur_Prop_score_{0}.csv"
+            run_parameters["sae_e2e_prop_file"] = "./MSE/SAE_E2E_Prop_score_{0}_mmd.csv"
+            run_parameters["sae_stacked_all_prop_file"] = "./MSE/SAE_stacked_all_Prop_score_{0}_mmd.csv"
+            run_parameters["sae_stacked_cur_prop_file"] = "./MSE/SAE_stacked_cur_Prop_score_{0}_mmd.csv"
 
-            run_parameters["sae_e2e_iter_file"] = "./MSE/ITE/ITE_SAE_E2E_iter_{0}.csv"
-            run_parameters["sae_stacked_all_iter_file"] = "./MSE/ITE/ITE_SAE_stacked_all_iter_{0}.csv"
-            run_parameters["sae_stacked_cur_iter_file"] = "./MSE/ITE/ITE_SAE_stacked_cur_Prop_iter_{0}.csv"
+            run_parameters["sae_e2e_iter_file"] = "./MSE/ITE/ITE_SAE_E2E_iter_{0}_mmd.csv"
+            run_parameters["sae_stacked_all_iter_file"] = "./MSE/ITE/ITE_SAE_stacked_all_iter_{0}_mmd.csv"
+            run_parameters["sae_stacked_cur_iter_file"] = "./MSE/ITE/ITE_SAE_stacked_cur_Prop_iter_{0}_mmd.csv"
 
             # LR
-            run_parameters["lr_prop_file"] = "./MSE/LR_Prop_score_{0}.csv"
-            run_parameters["lr_iter_file"] = "./MSE/ITE/ITE_LR_iter_{0}.csv"
+            run_parameters["lr_prop_file"] = "./MSE/LR_Prop_score_{0}_mmd.csv"
+            run_parameters["lr_iter_file"] = "./MSE/ITE/ITE_LR_iter_{0}_mmd.csv"
 
             # LR Lasso
-            run_parameters["lr_lasso_prop_file"] = "./MSE/LR_lasso_Prop_score_{0}.csv"
-            run_parameters["lr_lasso_iter_file"] = "./MSE/ITE/ITE_LR_Lasso_iter_{0}.csv"
+            run_parameters["lr_lasso_prop_file"] = "./MSE/LR_lasso_Prop_score_{0}_mmd.csv"
+            run_parameters["lr_lasso_iter_file"] = "./MSE/ITE/ITE_LR_Lasso_iter_{0}_mmd.csv"
             run_parameters["summary_file_name"] = "Details_original.txt"
             run_parameters["is_synthetic"] = False
 
         elif running_mode == "synthetic_data":
             run_parameters["input_nodes"] = 225
-            run_parameters["consolidated_file_path"] = "./MSE_Augmented/Results_consolidated.csv"
+            run_parameters["consolidated_file_path"] = "./MSE_Augmented/Results_consolidated_mmd.csv"
 
             # NN
-            run_parameters["nn_prop_file"] = "./MSE_Augmented/NN_Prop_score_{0}.csv"
-            run_parameters["nn_iter_file"] = "./MSE_Augmented/ITE/ITE_NN_iter_{0}.csv"
+            run_parameters["nn_prop_file"] = "./MSE_Augmented/NN_Prop_score_{0}_mmd.csv"
+            run_parameters["nn_iter_file"] = "./MSE_Augmented/ITE/ITE_NN_iter_{0}_mmd.csv"
             # SAE
-            run_parameters["sae_e2e_prop_file"] = "./MSE_Augmented/SAE_E2E_Prop_score_{0}.csv"
-            run_parameters["sae_stacked_all_prop_file"] = "./MSE_Augmented/SAE_stacked_all_Prop_score_{0}.csv"
-            run_parameters["sae_stacked_cur_prop_file"] = "./MSE_Augmented/SAE_stacked_cur_Prop_score_{0}.csv"
+            run_parameters["sae_e2e_prop_file"] = "./MSE_Augmented/SAE_E2E_Prop_score_{0}_mmd.csv"
+            run_parameters["sae_stacked_all_prop_file"] = "./MSE_Augmented/SAE_stacked_all_Prop_score_{0}_mmd.csv"
+            run_parameters["sae_stacked_cur_prop_file"] = "./MSE_Augmented/SAE_stacked_cur_Prop_score_{0}_mmd.csv"
 
-            run_parameters["sae_e2e_iter_file"] = "./MSE_Augmented/ITE/ITE_SAE_E2E_iter_{0}.csv"
-            run_parameters["sae_stacked_all_iter_file"] = "./MSE_Augmented/ITE/ITE_SAE_stacked_all_iter_{0}.csv"
-            run_parameters["sae_stacked_cur_iter_file"] = "./MSE_Augmented/ITE/ITE_SAE_stacked_cur_Prop_iter_{0}.csv"
+            run_parameters["sae_e2e_iter_file"] = "./MSE_Augmented/ITE/ITE_SAE_E2E_iter_{0}_mmd.csv"
+            run_parameters["sae_stacked_all_iter_file"] = "./MSE_Augmented/ITE/ITE_SAE_stacked_all_iter_{0}_mmd.csv"
+            run_parameters["sae_stacked_cur_iter_file"] = "./MSE_Augmented/ITE/ITE_SAE_stacked_cur_Prop_iter_{0}_mmd.csv"
 
             # LR
-            run_parameters["lr_prop_file"] = "./MSE_Augmented/LR_Prop_score_{0}.csv"
-            run_parameters["lr_iter_file"] = "./MSE_Augmented/ITE/ITE_LR_iter_{0}.csv"
+            run_parameters["lr_prop_file"] = "./MSE_Augmented/LR_Prop_score_{0}_mmd.csv"
+            run_parameters["lr_iter_file"] = "./MSE_Augmented/ITE/ITE_LR_iter_{0}_mmd.csv"
 
             # LR Lasso
-            run_parameters["lr_lasso_prop_file"] = "./MSE_Augmented/LR_lasso_Prop_score_{0}.csv"
-            run_parameters["lr_lasso_iter_file"] = "./MSE_Augmented/ITE/ITE_LR_Lasso_iter_{0}.csv"
+            run_parameters["lr_lasso_prop_file"] = "./MSE_Augmented/LR_lasso_Prop_score_{0}_mmd.csv"
+            run_parameters["lr_lasso_iter_file"] = "./MSE_Augmented/ITE/ITE_LR_Lasso_iter_{0}_mmd.csv"
 
             run_parameters["summary_file_name"] = "Details_augmented.txt"
             run_parameters["is_synthetic"] = True
