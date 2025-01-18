@@ -1,0 +1,2876 @@
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.035917189317169015
+Epoch: 200, loss: 0.021861148055320904
+Epoch: 300, loss: 0.019511157623779626
+Epoch: 400, loss: 0.01862536714538748
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.259323164820671, correct: 2335/2570, accuracy: 0.9085603112840467
+Epoch: 50, loss: 14.612684536725283, correct: 2335/2570, accuracy: 0.9085603112840467
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08635540430744489
+Epoch: 200, loss: 0.08155193028074724
+Epoch: 300, loss: 0.0801491131661115
+Epoch: 400, loss: 0.08770940609184312
+----- Training SAE -----
+Epoch: 100, loss: 0.09099773501540408
+Epoch: 200, loss: 0.08771177703215752
+Epoch: 300, loss: 0.08718619063312624
+Epoch: 400, loss: 0.08531442974452619
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 16.253799490630627, correct: 2335/2570, accuracy: 0.9085603112840467
+Epoch: 50, loss: 15.00267432257533, correct: 2336/2570, accuracy: 0.9089494163424124
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08779517381831452
+Epoch: 200, loss: 0.08123376050297125
+Epoch: 300, loss: 0.0824043453199628
+Epoch: 400, loss: 0.08152982546591464
+----- Training SAE -----
+Epoch: 100, loss: 0.08669138460615534
+Epoch: 200, loss: 0.0889970166263757
+Epoch: 300, loss: 0.08936517280928882
+Epoch: 400, loss: 0.08679565143438032
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 16.283066004514694, correct: 2327/2570, accuracy: 0.9054474708171206
+Epoch: 50, loss: 14.674162898212671, correct: 2341/2570, accuracy: 0.9108949416342412
+Training completed..
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+treated: 237
+control: 2333
+total: 2570
+[0.037080783396959305, 0.03581293672323227, 0.0019910139963030815, 0.0563470795750618, 0.26298755407333374, 0.03169490769505501, 0.0343119241297245, 0.03604236990213394, 0.5087867379188538, 0.04593519866466522, 0.931482195854187, 0.9718812108039856, 0.05925891548395157, 0.047239966690540314, 0.05372120812535286, 0.1577799916267395, 0.35073232650756836, 0.39851751923561096, 0.944034218788147, 0.3447335362434387, 0.35697898268699646, 0.27718257904052734, 0.050046663731336594, 0.07113776355981827, 0.25164803862571716, 0.10128507763147354, 0.9815333485603333, 0.2658061385154724, 0.342819482088089, 0.047309815883636475, 0.3024955987930298, 0.23107843101024628, 0.33548256754875183, 0.35987672209739685, 0.32866740226745605, 0.6836416125297546, 0.35187414288520813, 0.35214123129844666, 0.2521795630455017, 0.04676813632249832, 0.25246432423591614, 0.9893759489059448, 0.36242079734802246, 0.35741445422172546, 0.10477674007415771, 0.2534985840320587, 0.2827445864677429, 0.2632328271865845, 0.3653610050678253, 0.1678014099597931, 0.22474676370620728, 0.9862098097801208, 0.056952156126499176, 0.9884430766105652, 0.09251365065574646, 0.02695539966225624, 0.40949398279190063, 0.34083718061447144, 0.07742121070623398, 0.30149146914482117, 0.38761386275291443, 0.33145177364349365, 0.2047596275806427, 0.35475343465805054, 0.3476807773113251, 0.31228873133659363, 0.3493307828903198, 0.35197728872299194, 0.223469540476799, 0.2887599468231201, 0.3475838601589203, 0.35325831174850464, 0.2562665343284607, 0.26857686042785645, 0.35815754532814026, 0.3470897972583771, 0.24402959644794464, 0.3540617823600769, 0.3505295217037201, 0.3068336248397827, 0.35149747133255005, 0.3526284992694855, 0.35247161984443665, 0.3450809121131897, 0.3324865996837616, 0.324312299489975, 0.3525998592376709, 0.3525998592376709, 0.10150371491909027, 0.34260088205337524, 0.3454171121120453, 0.33493781089782715, 0.06532742828130722, 0.07358567416667938, 0.2779715657234192, 0.23188602924346924, 0.3479468822479248, 0.3923369348049164, 0.34527459740638733, 0.3794168531894684, 0.2833419740200043, 0.34890472888946533, 0.3484731614589691, 0.32354074716567993, 0.1598319411277771, 0.23471727967262268, 0.38831618428230286, 0.29584774374961853, 0.31933990120887756, 0.36970406770706177, 0.11244586110115051, 0.31684115529060364, 0.31228873133659363, 0.31444457173347473, 0.9292759299278259, 0.3333771526813507, 0.36794495582580566, 0.34883713722229004, 0.2051253616809845, 0.37571629881858826, 0.35243070125579834, 0.9376493692398071, 0.3603341281414032, 0.3923369348049164, 0.3923369348049164, 0.4413681924343109, 0.16055740416049957, 0.9197388887405396, 0.3605863153934479, 0.2263835072517395, 0.40146002173423767, 0.40146002173423767, 0.35266026854515076, 0.4264058768749237, 0.4064578413963318, 0.35916322469711304, 0.41159212589263916, 0.41159212589263916, 0.35914862155914307, 0.37508493661880493, 0.13132528960704803, 0.16772058606147766, 0.18033449351787567, 0.38582149147987366, 0.3490379750728607, 0.35302644968032837, 0.3041221797466278, 0.35211917757987976, 0.4871208965778351, 0.33862608671188354, 0.2627398669719696, 0.3501627445220947, 0.3431120812892914, 0.17064161598682404, 0.2887336015701294, 0.3066343069076538, 0.3458775579929352, 0.35325831174850464, 0.3531254231929779, 0.3539484441280365, 0.35383516550064087, 0.3530212342739105, 0.35329946875572205, 0.17427678406238556, 0.3469642996788025, 0.35325831174850464, 0.31825289130210876, 0.3374219834804535, 0.35302644968032837, 0.35302644968032837, 0.35240042209625244, 0.3129921555519104, 0.3508371114730835, 0.3531430661678314, 0.3173474669456482, 0.2898762822151184, 0.35299280285835266, 0.3531002700328827, 0.23782680928707123, 0.3514823019504547, 0.3533744215965271, 0.3533744215965271, 0.3109566271305084, 0.3534908592700958, 0.3497849404811859, 0.3530258536338806, 0.35193169116973877, 0.3521408438682556, 0.3540617823600769, 0.3531254231929779, 0.3531254231929779, 0.35235920548439026, 0.35237956047058105, 0.35360661149024963, 0.35118356347084045, 0.3518771529197693, 0.351973295211792, 0.33664822578430176, 0.3504382073879242, 0.34035512804985046, 0.3346141278743744, 0.3497834801673889, 0.35252776741981506, 0.3531060516834259, 0.3521266281604767, 0.3523527681827545, 0.3524407148361206, 0.3278636634349823, 0.35148885846138, 0.35167327523231506, 0.3519792854785919, 0.3533388376235962, 0.3530861437320709, 0.3506789207458496, 0.3509311378002167, 0.34602829813957214, 0.3522944748401642, 0.35232725739479065, 0.3525998592376709, 0.35300907492637634, 0.35273709893226624, 0.3528563976287842, 0.3327648341655731, 0.35213223099708557, 0.3516424596309662, 0.35267406702041626, 0.3524795174598694, 0.3481401205062866, 0.3481401205062866, 0.28493088483810425, 0.35050997138023376, 0.3501487672328949, 0.350984662771225, 0.35091331601142883, 0.27361902594566345, 0.35063108801841736, 0.35109755396842957]
+Using original data
+cuda:0
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1}
+########### 400 epochs ###########
+----------------------------------------
+iter_id: 0
+----------------------------------------
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+Numpy Test Statistics:
+torch.Size([642, 19])
+torch.Size([642, 1])
+----------- Training and evaluation phase ------------
+############### Propensity Score neural net Training ###############
+.. Training started ..
+Saved model path: ./Propensity_Model/NN_PS_model_iter_id_0_epoch_50_lr_0.001_mmd.pth
+Epoch: 25, loss: 15.155633734539151, correct: 2336/2570, accuracy: 0.9089494163424124
+Epoch: 50, loss: 14.323226153850555, correct: 2348/2570, accuracy: 0.9136186770428015
+Saved model..
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+############### DCN Training using NN ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/NN_DCN_model_iter_id_0_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 685.1657
+epoch: 19, Combined loss (CE + MMD): 645.3164
+epoch: 29, Combined loss (CE + MMD): 641.1568
+epoch: 39, Combined loss (CE + MMD): 613.5522
+epoch: 49, Combined loss (CE + MMD): 615.8738
+epoch: 59, Combined loss (CE + MMD): 593.7245
+epoch: 69, Combined loss (CE + MMD): 586.3724
+epoch: 79, Combined loss (CE + MMD): 574.8779
+epoch: 89, Combined loss (CE + MMD): 604.9963
+epoch: 99, Combined loss (CE + MMD): 576.4106
+Neural Net start time: = 2025-01-17 18:08:49.374928
+Neural Net end time: = 2025-01-17 18:13:55.556456
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'train_set': <torch.utils.data.dataset.TensorDataset object at 0x14dcac1baf50>, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1, 'input_nodes': 17}
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.03979933291765643
+Epoch: 200, loss: 0.02396875846395154
+Epoch: 300, loss: 0.014488690883427122
+Epoch: 400, loss: 0.013132679465882204
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.228970766067505, correct: 2327/2570, accuracy: 0.9054474708171206
+Epoch: 50, loss: 14.6976702734828, correct: 2339/2570, accuracy: 0.9101167315175097
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08939482648799449
+Epoch: 200, loss: 0.08309453219911199
+Epoch: 300, loss: 0.0822284718354543
+Epoch: 400, loss: 0.08236826712518562
+----- Training SAE -----
+Epoch: 100, loss: 0.09053220986216157
+Epoch: 200, loss: 0.08647771584398953
+Epoch: 300, loss: 0.0916498550846253
+Epoch: 400, loss: 0.08363461043731665
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 16.09509164094925, correct: 2331/2570, accuracy: 0.9070038910505837
+Epoch: 50, loss: 15.116165608167648, correct: 2336/2570, accuracy: 0.9089494163424124
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08690046748997253
+Epoch: 200, loss: 0.08419240339670653
+Epoch: 300, loss: 0.07870528320379463
+Epoch: 400, loss: 0.07969563017472808
+----- Training SAE -----
+Epoch: 100, loss: 0.08862424559063381
+Epoch: 200, loss: 0.08593250958271968
+Epoch: 300, loss: 0.08628315267003613
+Epoch: 400, loss: 0.08605036176281211
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.93213814496994, correct: 2332/2570, accuracy: 0.9073929961089494
+Epoch: 50, loss: 15.250675424933434, correct: 2333/2570, accuracy: 0.9077821011673152
+Training completed..
+---------------------------------------------------------------------------
+End to End SAE training
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/SAE_E2E_DCN_model_iter_id_0_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 658.8334
+epoch: 19, Combined loss (CE + MMD): 651.6656
+epoch: 29, Combined loss (CE + MMD): 609.8926
+epoch: 39, Combined loss (CE + MMD): 621.3580
+epoch: 49, Combined loss (CE + MMD): 608.3551
+epoch: 59, Combined loss (CE + MMD): 590.9399
+epoch: 69, Combined loss (CE + MMD): 579.5556
+epoch: 79, Combined loss (CE + MMD): 563.4792
+epoch: 89, Combined loss (CE + MMD): 565.8057
+epoch: 99, Combined loss (CE + MMD): 579.6151
+SAE E2E start time: = 2025-01-17 18:19:00.891114
+SAE E2E end time: = 2025-01-17 18:24:01.482459
+---------------------------------------------------------------------------
+----------Layer wise greedy stacked SAE training - All layers----------
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/SAE_stacked_all_DCN_model_iter_id_0_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 721.4671
+epoch: 19, Combined loss (CE + MMD): 675.1563
+epoch: 29, Combined loss (CE + MMD): 659.7056
+epoch: 39, Combined loss (CE + MMD): 653.2861
+epoch: 49, Combined loss (CE + MMD): 632.2909
+epoch: 59, Combined loss (CE + MMD): 622.8911
+epoch: 69, Combined loss (CE + MMD): 630.4476
+epoch: 79, Combined loss (CE + MMD): 641.9967
+epoch: 89, Combined loss (CE + MMD): 621.4964
+epoch: 99, Combined loss (CE + MMD): 623.6472
+SAE all layer active start time: = 2025-01-17 18:24:01.482495
+SAE all layer active end time: = 2025-01-17 18:29:02.707323
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_0_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 678.8104
+epoch: 19, Combined loss (CE + MMD): 650.5549
+epoch: 29, Combined loss (CE + MMD): 648.6479
+epoch: 39, Combined loss (CE + MMD): 630.8504
+epoch: 49, Combined loss (CE + MMD): 628.5984
+epoch: 59, Combined loss (CE + MMD): 621.1109
+epoch: 69, Combined loss (CE + MMD): 614.6101
+epoch: 79, Combined loss (CE + MMD): 609.6005
+epoch: 89, Combined loss (CE + MMD): 605.8125
+epoch: 99, Combined loss (CE + MMD): 590.1126
+SAE cur layer active start time: = 2025-01-17 18:29:02.707364
+SAE all layer active end time: = 2025-01-17 18:34:04.288372
+############### DCN Training using Logistic Regression ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_0_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 691.3998
+epoch: 19, Combined loss (CE + MMD): 648.0578
+epoch: 29, Combined loss (CE + MMD): 626.2450
+epoch: 39, Combined loss (CE + MMD): 629.9572
+epoch: 49, Combined loss (CE + MMD): 606.3044
+epoch: 59, Combined loss (CE + MMD): 612.4031
+epoch: 69, Combined loss (CE + MMD): 604.5299
+epoch: 79, Combined loss (CE + MMD): 599.3101
+epoch: 89, Combined loss (CE + MMD): 590.7568
+epoch: 99, Combined loss (CE + MMD): 578.6108
+Logistic Regression start time: = 2025-01-17 18:34:04.288413
+Logistic Regression end time: = 2025-01-17 18:39:04.728271
+############### DCN Training using Logistic Regression Lasso ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_0_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 695.3175
+epoch: 19, Combined loss (CE + MMD): 649.5118
+epoch: 29, Combined loss (CE + MMD): 648.7950
+epoch: 39, Combined loss (CE + MMD): 624.7233
+epoch: 49, Combined loss (CE + MMD): 626.9323
+epoch: 59, Combined loss (CE + MMD): 594.9332
+epoch: 69, Combined loss (CE + MMD): 603.5090
+epoch: 79, Combined loss (CE + MMD): 603.1509
+epoch: 89, Combined loss (CE + MMD): 569.8471
+epoch: 99, Combined loss (CE + MMD): 591.3652
+Logistic Regression Lasso start time: = 2025-01-17 18:39:04.728346
+Logistic Regression Lasso end time: = 2025-01-17 18:44:05.607153
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+.. Evaluation started ..
+bias_att: 0.14285714285714285
+policy_value: 0.6643668831168831
+Risk: 0.3356331168831169
+atc_pred: 0.03571428571428571
+att_pred: -0.05
+err_fact: 0.17289719626168223
+############### DCN Testing using SAE E2E ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+.. Evaluation started ..
+bias_att: 0.09285714285714286
+policy_value: 0.7072649572649573
+Risk: 0.2927350427350427
+atc_pred: 0.023809523809523808
+att_pred: 0.0
+err_fact: 0.17757009345794392
+############### DCN Testing using SAE Stacked all layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+.. Evaluation started ..
+bias_att: 0.24285714285714285
+policy_value: 0.6480514096185738
+Risk: 0.35194859038142623
+atc_pred: 0.08333333333333333
+att_pred: -0.15
+err_fact: 0.2071651090342679
+############### DCN Testing using SAE cur layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+.. Evaluation started ..
+bias_att: 0.05952380952380953
+policy_value: 0.6826287138787139
+Risk: 0.31737128612128607
+atc_pred: -0.08333333333333333
+att_pred: 0.03333333333333333
+err_fact: 0.1806853582554517
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+############### DCN Testing using LR ###############
+.. Evaluation started ..
+bias_att: 0.20952380952380953
+policy_value: 0.6238425925925926
+Risk: 0.37615740740740744
+atc_pred: 0.11904761904761904
+att_pred: -0.11666666666666667
+err_fact: 0.19314641744548286
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+############### DCN Testing using LR Lasso ###############
+.. Evaluation started ..
+bias_att: 0.14285714285714285
+policy_value: 0.6572564412238325
+Risk: 0.34274355877616747
+atc_pred: 0.10714285714285714
+att_pred: -0.05
+err_fact: 0.19003115264797507
+########### 400 epochs ###########
+----------------------------------------
+iter_id: 1
+----------------------------------------
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+Numpy Test Statistics:
+torch.Size([642, 19])
+torch.Size([642, 1])
+----------- Training and evaluation phase ------------
+############### Propensity Score neural net Training ###############
+.. Training started ..
+Saved model path: ./Propensity_Model/NN_PS_model_iter_id_1_epoch_50_lr_0.001_mmd.pth
+Epoch: 25, loss: 15.322426099330187, correct: 2330/2570, accuracy: 0.9066147859922179
+Epoch: 50, loss: 14.609138697385788, correct: 2346/2570, accuracy: 0.91284046692607
+Saved model..
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+############### DCN Training using NN ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/NN_DCN_model_iter_id_1_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 695.7166
+epoch: 19, Combined loss (CE + MMD): 679.1918
+epoch: 29, Combined loss (CE + MMD): 630.6175
+epoch: 39, Combined loss (CE + MMD): 660.8636
+epoch: 49, Combined loss (CE + MMD): 623.0406
+epoch: 59, Combined loss (CE + MMD): 614.3713
+epoch: 69, Combined loss (CE + MMD): 602.2826
+epoch: 79, Combined loss (CE + MMD): 597.2283
+epoch: 89, Combined loss (CE + MMD): 598.7463
+epoch: 99, Combined loss (CE + MMD): 608.5536
+Neural Net start time: = 2025-01-17 18:44:10.199512
+Neural Net end time: = 2025-01-17 18:49:15.730075
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'train_set': <torch.utils.data.dataset.TensorDataset object at 0x14ddccf03eb0>, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1, 'input_nodes': 17}
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.030437431022248888
+Epoch: 200, loss: 0.02186794300782092
+Epoch: 300, loss: 0.01952912706743788
+Epoch: 400, loss: 0.018859647547849166
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.120446190237999, correct: 2343/2570, accuracy: 0.9116731517509727
+Epoch: 50, loss: 13.60524844378233, correct: 2344/2570, accuracy: 0.9120622568093385
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08550857039697377
+Epoch: 200, loss: 0.08602081211628737
+Epoch: 300, loss: 0.08493801657064462
+Epoch: 400, loss: 0.08440668457820091
+----- Training SAE -----
+Epoch: 100, loss: 0.09321214654195456
+Epoch: 200, loss: 0.088324620583911
+Epoch: 300, loss: 0.08729590990661103
+Epoch: 400, loss: 0.08897937503125933
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.8245629966259, correct: 2330/2570, accuracy: 0.9066147859922179
+Epoch: 50, loss: 15.1227420642972, correct: 2335/2570, accuracy: 0.9085603112840467
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08563105780401348
+Epoch: 200, loss: 0.0844876531649519
+Epoch: 300, loss: 0.08421144445921168
+Epoch: 400, loss: 0.08313951967858974
+----- Training SAE -----
+Epoch: 100, loss: 0.08717818466233618
+Epoch: 200, loss: 0.08638611021969053
+Epoch: 300, loss: 0.08975236274210023
+Epoch: 400, loss: 0.08918580049533903
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.643104612827301, correct: 2328/2570, accuracy: 0.9058365758754864
+Epoch: 50, loss: 15.307681269943714, correct: 2337/2570, accuracy: 0.9093385214007782
+Training completed..
+---------------------------------------------------------------------------
+End to End SAE training
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/SAE_E2E_DCN_model_iter_id_1_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 709.8270
+epoch: 19, Combined loss (CE + MMD): 659.6093
+epoch: 29, Combined loss (CE + MMD): 648.1674
+epoch: 39, Combined loss (CE + MMD): 639.8219
+epoch: 49, Combined loss (CE + MMD): 639.3361
+epoch: 59, Combined loss (CE + MMD): 626.5226
+epoch: 69, Combined loss (CE + MMD): 630.2417
+epoch: 79, Combined loss (CE + MMD): 625.1718
+epoch: 89, Combined loss (CE + MMD): 608.3005
+epoch: 99, Combined loss (CE + MMD): 589.3710
+SAE E2E start time: = 2025-01-17 18:54:20.449633
+SAE E2E end time: = 2025-01-17 18:59:21.293336
+---------------------------------------------------------------------------
+----------Layer wise greedy stacked SAE training - All layers----------
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/SAE_stacked_all_DCN_model_iter_id_1_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 676.3483
+epoch: 19, Combined loss (CE + MMD): 655.5056
+epoch: 29, Combined loss (CE + MMD): 643.4324
+epoch: 39, Combined loss (CE + MMD): 628.3820
+epoch: 49, Combined loss (CE + MMD): 594.6085
+epoch: 59, Combined loss (CE + MMD): 594.3557
+epoch: 69, Combined loss (CE + MMD): 608.9844
+epoch: 79, Combined loss (CE + MMD): 588.3510
+epoch: 89, Combined loss (CE + MMD): 588.3069
+epoch: 99, Combined loss (CE + MMD): 585.6335
+SAE all layer active start time: = 2025-01-17 18:59:21.293370
+SAE all layer active end time: = 2025-01-17 19:04:21.889600
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_1_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 690.9644
+epoch: 19, Combined loss (CE + MMD): 627.5615
+epoch: 29, Combined loss (CE + MMD): 614.9947
+epoch: 39, Combined loss (CE + MMD): 598.6509
+epoch: 49, Combined loss (CE + MMD): 589.5159
+epoch: 59, Combined loss (CE + MMD): 596.7345
+epoch: 69, Combined loss (CE + MMD): 615.3660
+epoch: 79, Combined loss (CE + MMD): 577.6597
+epoch: 89, Combined loss (CE + MMD): 570.8980
+epoch: 99, Combined loss (CE + MMD): 545.5487
+SAE cur layer active start time: = 2025-01-17 19:04:21.889700
+SAE all layer active end time: = 2025-01-17 19:09:22.318549
+############### DCN Training using Logistic Regression ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_1_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 686.9325
+epoch: 19, Combined loss (CE + MMD): 654.7479
+epoch: 29, Combined loss (CE + MMD): 630.6066
+epoch: 39, Combined loss (CE + MMD): 609.1857
+epoch: 49, Combined loss (CE + MMD): 623.2472
+epoch: 59, Combined loss (CE + MMD): 589.7816
+epoch: 69, Combined loss (CE + MMD): 586.6545
+epoch: 79, Combined loss (CE + MMD): 589.3134
+epoch: 89, Combined loss (CE + MMD): 579.5037
+epoch: 99, Combined loss (CE + MMD): 571.6677
+Logistic Regression start time: = 2025-01-17 19:09:22.318600
+Logistic Regression end time: = 2025-01-17 19:14:21.659320
+############### DCN Training using Logistic Regression Lasso ###############
+Treated Statistics ==>
+torch.Size([237, 17])
+Control Statistics ==>
+torch.Size([2333, 17])
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_1_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 686.6682
+epoch: 19, Combined loss (CE + MMD): 671.7201
+epoch: 29, Combined loss (CE + MMD): 651.3281
+epoch: 39, Combined loss (CE + MMD): 641.3373
+epoch: 49, Combined loss (CE + MMD): 630.5807
+epoch: 59, Combined loss (CE + MMD): 609.3121
+epoch: 69, Combined loss (CE + MMD): 606.8876
+epoch: 79, Combined loss (CE + MMD): 605.1180
+epoch: 89, Combined loss (CE + MMD): 609.6241
+epoch: 99, Combined loss (CE + MMD): 585.2228
+Logistic Regression Lasso start time: = 2025-01-17 19:14:21.659350
+Logistic Regression Lasso end time: = 2025-01-17 19:19:22.136125
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+.. Evaluation started ..
+bias_att: 0.42380952380952375
+policy_value: 0.6747474747474747
+Risk: 0.32525252525252535
+atc_pred: 0.30952380952380953
+att_pred: -0.13333333333333333
+err_fact: 0.1791277258566978
+############### DCN Testing using SAE E2E ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+.. Evaluation started ..
+bias_att: 0.42380952380952375
+policy_value: 0.6917162698412698
+Risk: 0.30828373015873023
+atc_pred: 0.30952380952380953
+att_pred: -0.13333333333333333
+err_fact: 0.17289719626168223
+############### DCN Testing using SAE Stacked all layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+.. Evaluation started ..
+bias_att: 0.2571428571428571
+policy_value: 0.6095238095238095
+Risk: 0.39047619047619053
+atc_pred: 0.07142857142857142
+att_pred: 0.03333333333333333
+err_fact: 0.1853582554517134
+############### DCN Testing using SAE cur layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+.. Evaluation started ..
+bias_att: 0.3904761904761904
+policy_value: 0.638888888888889
+Risk: 0.36111111111111105
+atc_pred: 0.27380952380952384
+att_pred: -0.1
+err_fact: 0.19937694704049844
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+############### DCN Testing using LR ###############
+.. Evaluation started ..
+bias_att: 0.32380952380952377
+policy_value: 0.6527777777777778
+Risk: 0.3472222222222222
+atc_pred: 0.30952380952380953
+att_pred: -0.03333333333333333
+err_fact: 0.1853582554517134
+Treated Statistics ==>
+torch.Size([60, 17])
+Control Statistics ==>
+torch.Size([582, 17])
+############### DCN Testing using LR Lasso ###############
+.. Evaluation started ..
+bias_att: 0.40714285714285714
+policy_value: 0.6574074074074074
+Risk: 0.34259259259259256
+atc_pred: 0.30952380952380953
+att_pred: -0.11666666666666667
+err_fact: 0.19158878504672897
+########### 400 epochs ###########
+----------------------------------------
+iter_id: 2
+----------------------------------------
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+Numpy Test Statistics:
+torch.Size([642, 19])
+torch.Size([642, 1])
+----------- Training and evaluation phase ------------
+############### Propensity Score neural net Training ###############
+.. Training started ..
+Saved model path: ./Propensity_Model/NN_PS_model_iter_id_2_epoch_50_lr_0.001_mmd.pth
+Epoch: 25, loss: 15.26813169568777, correct: 2331/2570, accuracy: 0.9070038910505837
+Epoch: 50, loss: 14.554825764149427, correct: 2343/2570, accuracy: 0.9116731517509727
+Saved model..
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+############### DCN Training using NN ###############
+Treated Statistics ==>
+torch.Size([240, 17])
+Control Statistics ==>
+torch.Size([2330, 17])
+Saved model path: ./DCNModel/NN_DCN_model_iter_id_2_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 699.6488
+epoch: 19, Combined loss (CE + MMD): 681.7721
+epoch: 29, Combined loss (CE + MMD): 645.4531
+epoch: 39, Combined loss (CE + MMD): 611.4475
+epoch: 49, Combined loss (CE + MMD): 607.7309
+epoch: 59, Combined loss (CE + MMD): 611.0069
+epoch: 69, Combined loss (CE + MMD): 603.2641
+epoch: 79, Combined loss (CE + MMD): 603.5423
+epoch: 89, Combined loss (CE + MMD): 587.1633
+epoch: 99, Combined loss (CE + MMD): 581.8566
+Neural Net start time: = 2025-01-17 19:19:26.687002
+Neural Net end time: = 2025-01-17 19:24:31.589315
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'train_set': <torch.utils.data.dataset.TensorDataset object at 0x14ddccf03d30>, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1, 'input_nodes': 17}
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.0210227635976525
+Epoch: 200, loss: 0.0168486366243918
+Epoch: 300, loss: 0.015525975103639527
+Epoch: 400, loss: 0.010130725036386722
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.679523348808289, correct: 2328/2570, accuracy: 0.9058365758754864
+Epoch: 50, loss: 14.499257259070873, correct: 2332/2570, accuracy: 0.9073929961089494
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08267398422330986
+Epoch: 200, loss: 0.08006897789460642
+Epoch: 300, loss: 0.07911667747446048
+Epoch: 400, loss: 0.07734730931711786
+----- Training SAE -----
+Epoch: 100, loss: 0.08817692303363188
+Epoch: 200, loss: 0.08611591601813282
+Epoch: 300, loss: 0.08338512296293989
+Epoch: 400, loss: 0.08372719990618435
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 16.626860804855824, correct: 2307/2570, accuracy: 0.8976653696498055
+Epoch: 50, loss: 15.30914805084467, correct: 2318/2570, accuracy: 0.9019455252918288
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.07904156329639164
+Epoch: 200, loss: 0.0791961652353222
+Epoch: 300, loss: 0.08040345372793115
+Epoch: 400, loss: 0.07729516647480152
+----- Training SAE -----
+Epoch: 100, loss: 0.0865857346834224
+Epoch: 200, loss: 0.0875119063773273
+Epoch: 300, loss: 0.08622778722165543
+Epoch: 400, loss: 0.08788298659118605
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.962230209261179, correct: 2328/2570, accuracy: 0.9058365758754864
+Epoch: 50, loss: 14.995600700378418, correct: 2334/2570, accuracy: 0.9081712062256809
+Training completed..
+---------------------------------------------------------------------------
+End to End SAE training
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([240, 17])
+Control Statistics ==>
+torch.Size([2330, 17])
+Saved model path: ./DCNModel/SAE_E2E_DCN_model_iter_id_2_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 659.7163
+epoch: 19, Combined loss (CE + MMD): 646.1652
+epoch: 29, Combined loss (CE + MMD): 640.7166
+epoch: 39, Combined loss (CE + MMD): 620.6616
+epoch: 49, Combined loss (CE + MMD): 616.4166
+epoch: 59, Combined loss (CE + MMD): 596.7994
+epoch: 69, Combined loss (CE + MMD): 602.4611
+epoch: 79, Combined loss (CE + MMD): 607.3131
+epoch: 89, Combined loss (CE + MMD): 580.1154
+epoch: 99, Combined loss (CE + MMD): 568.0060
+SAE E2E start time: = 2025-01-17 19:29:36.620046
+SAE E2E end time: = 2025-01-17 19:34:37.349807
+---------------------------------------------------------------------------
+----------Layer wise greedy stacked SAE training - All layers----------
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([240, 17])
+Control Statistics ==>
+torch.Size([2330, 17])
+Saved model path: ./DCNModel/SAE_stacked_all_DCN_model_iter_id_2_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 695.8112
+epoch: 19, Combined loss (CE + MMD): 668.3259
+epoch: 29, Combined loss (CE + MMD): 631.6501
+epoch: 39, Combined loss (CE + MMD): 626.6356
+epoch: 49, Combined loss (CE + MMD): 599.4906
+epoch: 59, Combined loss (CE + MMD): 590.5118
+epoch: 69, Combined loss (CE + MMD): 574.7256
+epoch: 79, Combined loss (CE + MMD): 593.7359
+epoch: 89, Combined loss (CE + MMD): 602.2190
+epoch: 99, Combined loss (CE + MMD): 584.6473
+SAE all layer active start time: = 2025-01-17 19:34:37.349845
+SAE all layer active end time: = 2025-01-17 19:39:37.355457
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([240, 17])
+Control Statistics ==>
+torch.Size([2330, 17])
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_2_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 677.9299
+epoch: 19, Combined loss (CE + MMD): 648.6802
+epoch: 29, Combined loss (CE + MMD): 624.5239
+epoch: 39, Combined loss (CE + MMD): 618.0298
+epoch: 49, Combined loss (CE + MMD): 597.2675
+epoch: 59, Combined loss (CE + MMD): 613.2249
+epoch: 69, Combined loss (CE + MMD): 605.3254
+epoch: 79, Combined loss (CE + MMD): 605.9478
+epoch: 89, Combined loss (CE + MMD): 583.4868
+epoch: 99, Combined loss (CE + MMD): 576.4809
+SAE cur layer active start time: = 2025-01-17 19:39:37.356202
+SAE all layer active end time: = 2025-01-17 19:44:37.598505
+############### DCN Training using Logistic Regression ###############
+Treated Statistics ==>
+torch.Size([240, 17])
+Control Statistics ==>
+torch.Size([2330, 17])
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_2_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 682.3711
+epoch: 19, Combined loss (CE + MMD): 648.7990
+epoch: 29, Combined loss (CE + MMD): 607.3536
+epoch: 39, Combined loss (CE + MMD): 596.1585
+epoch: 49, Combined loss (CE + MMD): 600.3821
+epoch: 59, Combined loss (CE + MMD): 611.2938
+epoch: 69, Combined loss (CE + MMD): 576.3508
+epoch: 79, Combined loss (CE + MMD): 585.6730
+epoch: 89, Combined loss (CE + MMD): 585.0701
+epoch: 99, Combined loss (CE + MMD): 569.9292
+Logistic Regression start time: = 2025-01-17 19:44:37.598556
+Logistic Regression end time: = 2025-01-17 19:49:38.321366
+############### DCN Training using Logistic Regression Lasso ###############
+Treated Statistics ==>
+torch.Size([240, 17])
+Control Statistics ==>
+torch.Size([2330, 17])
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_2_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 703.8759
+epoch: 19, Combined loss (CE + MMD): 645.0415
+epoch: 29, Combined loss (CE + MMD): 641.6425
+epoch: 39, Combined loss (CE + MMD): 630.0721
+epoch: 49, Combined loss (CE + MMD): 615.1425
+epoch: 59, Combined loss (CE + MMD): 587.0191
+epoch: 69, Combined loss (CE + MMD): 612.7418
+epoch: 79, Combined loss (CE + MMD): 571.4596
+epoch: 89, Combined loss (CE + MMD): 592.6434
+epoch: 99, Combined loss (CE + MMD): 575.6527
+Logistic Regression Lasso start time: = 2025-01-17 19:49:38.321395
+Logistic Regression Lasso end time: = 2025-01-17 19:54:38.029609
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+Treated Statistics ==>
+torch.Size([57, 17])
+Control Statistics ==>
+torch.Size([585, 17])
+.. Evaluation started ..
+bias_att: 0.022988505747126464
+policy_value: 0.6934865900383143
+Risk: 0.30651340996168575
+atc_pred: -0.04597701149425287
+att_pred: 0.08771929824561403
+err_fact: 0.1573208722741433
+############### DCN Testing using SAE E2E ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([57, 17])
+Control Statistics ==>
+torch.Size([585, 17])
+.. Evaluation started ..
+bias_att: 0.029643073200241954
+policy_value: 0.6882544581618656
+Risk: 0.3117455418381344
+atc_pred: -0.04597701149425287
+att_pred: 0.03508771929824561
+err_fact: 0.17445482866043613
+############### DCN Testing using SAE Stacked all layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([57, 17])
+Control Statistics ==>
+torch.Size([585, 17])
+.. Evaluation started ..
+bias_att: 0.08227465214761037
+policy_value: 0.7380952380952381
+Risk: 0.26190476190476186
+atc_pred: 0.08045977011494253
+att_pred: -0.017543859649122806
+err_fact: 0.1588785046728972
+############### DCN Testing using SAE cur layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([57, 17])
+Control Statistics ==>
+torch.Size([585, 17])
+.. Evaluation started ..
+bias_att: 0.09981851179673318
+policy_value: 0.6767676767676768
+Risk: 0.3232323232323232
+atc_pred: 0.09195402298850575
+att_pred: -0.03508771929824561
+err_fact: 0.1573208722741433
+Treated Statistics ==>
+torch.Size([57, 17])
+Control Statistics ==>
+torch.Size([585, 17])
+############### DCN Testing using LR ###############
+.. Evaluation started ..
+bias_att: 0.06473079249848757
+policy_value: 0.6918103448275863
+Risk: 0.3081896551724137
+atc_pred: -0.011494252873563218
+att_pred: 0.0
+err_fact: 0.1557632398753894
+Treated Statistics ==>
+torch.Size([57, 17])
+Control Statistics ==>
+torch.Size([585, 17])
+############### DCN Testing using LR Lasso ###############
+.. Evaluation started ..
+bias_att: 0.022988505747126464
+policy_value: 0.7322277046783625
+Risk: 0.2677722953216375
+atc_pred: 0.06896551724137931
+att_pred: 0.08771929824561403
+err_fact: 0.1573208722741433
+########### 400 epochs ###########
+----------------------------------------
+iter_id: 3
+----------------------------------------
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+Numpy Test Statistics:
+torch.Size([642, 19])
+torch.Size([642, 1])
+----------- Training and evaluation phase ------------
+############### Propensity Score neural net Training ###############
+.. Training started ..
+Saved model path: ./Propensity_Model/NN_PS_model_iter_id_3_epoch_50_lr_0.001_mmd.pth
+Epoch: 25, loss: 15.384938135743141, correct: 2332/2570, accuracy: 0.9073929961089494
+Epoch: 50, loss: 14.425220815464854, correct: 2342/2570, accuracy: 0.911284046692607
+Saved model..
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+############### DCN Training using NN ###############
+Treated Statistics ==>
+torch.Size([239, 17])
+Control Statistics ==>
+torch.Size([2331, 17])
+Saved model path: ./DCNModel/NN_DCN_model_iter_id_3_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 684.5487
+epoch: 19, Combined loss (CE + MMD): 688.1851
+epoch: 29, Combined loss (CE + MMD): 646.5679
+epoch: 39, Combined loss (CE + MMD): 626.7610
+epoch: 49, Combined loss (CE + MMD): 641.6503
+epoch: 59, Combined loss (CE + MMD): 607.2988
+epoch: 69, Combined loss (CE + MMD): 613.9768
+epoch: 79, Combined loss (CE + MMD): 608.4243
+epoch: 89, Combined loss (CE + MMD): 592.2974
+epoch: 99, Combined loss (CE + MMD): 590.9934
+Neural Net start time: = 2025-01-17 19:54:42.617573
+Neural Net end time: = 2025-01-17 19:59:48.364087
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'train_set': <torch.utils.data.dataset.TensorDataset object at 0x14ddccf03fd0>, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1, 'input_nodes': 17}
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.037590309448632196
+Epoch: 200, loss: 0.02117090993043449
+Epoch: 300, loss: 0.018933152630465265
+Epoch: 400, loss: 0.015480191061664143
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 14.919377379119396, correct: 2341/2570, accuracy: 0.9108949416342412
+Epoch: 50, loss: 14.606504427269101, correct: 2335/2570, accuracy: 0.9085603112840467
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08841045320401957
+Epoch: 200, loss: 0.08572808119617863
+Epoch: 300, loss: 0.07981554473991748
+Epoch: 400, loss: 0.08183086083994971
+----- Training SAE -----
+Epoch: 100, loss: 0.08630399939454632
+Epoch: 200, loss: 0.09100235989432276
+Epoch: 300, loss: 0.08492030019377485
+Epoch: 400, loss: 0.08767784598432941
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 16.022534802556038, correct: 2331/2570, accuracy: 0.9070038910505837
+Epoch: 50, loss: 15.363301523029804, correct: 2335/2570, accuracy: 0.9085603112840467
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08569676337050802
+Epoch: 200, loss: 0.07946235930294167
+Epoch: 300, loss: 0.08356287919076873
+Epoch: 400, loss: 0.08000539027062463
+----- Training SAE -----
+Epoch: 100, loss: 0.086696973691384
+Epoch: 200, loss: 0.08720019064199777
+Epoch: 300, loss: 0.09118020516118885
+Epoch: 400, loss: 0.09178305279325556
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 16.356152653694153, correct: 2327/2570, accuracy: 0.9054474708171206
+Epoch: 50, loss: 15.3375950679183, correct: 2329/2570, accuracy: 0.9062256809338521
+Training completed..
+---------------------------------------------------------------------------
+End to End SAE training
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([239, 17])
+Control Statistics ==>
+torch.Size([2331, 17])
+Saved model path: ./DCNModel/SAE_E2E_DCN_model_iter_id_3_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 691.6910
+epoch: 19, Combined loss (CE + MMD): 638.1683
+epoch: 29, Combined loss (CE + MMD): 648.3357
+epoch: 39, Combined loss (CE + MMD): 622.1630
+epoch: 49, Combined loss (CE + MMD): 620.9449
+epoch: 59, Combined loss (CE + MMD): 608.1265
+epoch: 69, Combined loss (CE + MMD): 598.4825
+epoch: 79, Combined loss (CE + MMD): 601.9952
+epoch: 89, Combined loss (CE + MMD): 600.6198
+epoch: 99, Combined loss (CE + MMD): 599.9387
+SAE E2E start time: = 2025-01-17 20:04:54.099833
+SAE E2E end time: = 2025-01-17 20:09:54.604562
+---------------------------------------------------------------------------
+----------Layer wise greedy stacked SAE training - All layers----------
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([239, 17])
+Control Statistics ==>
+torch.Size([2331, 17])
+Saved model path: ./DCNModel/SAE_stacked_all_DCN_model_iter_id_3_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 663.7386
+epoch: 19, Combined loss (CE + MMD): 660.4527
+epoch: 29, Combined loss (CE + MMD): 614.6417
+epoch: 39, Combined loss (CE + MMD): 622.1011
+epoch: 49, Combined loss (CE + MMD): 621.6194
+epoch: 59, Combined loss (CE + MMD): 595.0192
+epoch: 69, Combined loss (CE + MMD): 605.4025
+epoch: 79, Combined loss (CE + MMD): 588.7807
+epoch: 89, Combined loss (CE + MMD): 584.6275
+epoch: 99, Combined loss (CE + MMD): 588.1355
+SAE all layer active start time: = 2025-01-17 20:09:54.604596
+SAE all layer active end time: = 2025-01-17 20:14:54.378974
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([239, 17])
+Control Statistics ==>
+torch.Size([2331, 17])
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_3_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 667.1865
+epoch: 19, Combined loss (CE + MMD): 623.3584
+epoch: 29, Combined loss (CE + MMD): 613.6678
+epoch: 39, Combined loss (CE + MMD): 607.8015
+epoch: 49, Combined loss (CE + MMD): 582.4990
+epoch: 59, Combined loss (CE + MMD): 567.1542
+epoch: 69, Combined loss (CE + MMD): 584.7683
+epoch: 79, Combined loss (CE + MMD): 560.0236
+epoch: 89, Combined loss (CE + MMD): 552.1748
+epoch: 99, Combined loss (CE + MMD): 583.2555
+SAE cur layer active start time: = 2025-01-17 20:14:54.379008
+SAE all layer active end time: = 2025-01-17 20:19:56.311433
+############### DCN Training using Logistic Regression ###############
+Treated Statistics ==>
+torch.Size([239, 17])
+Control Statistics ==>
+torch.Size([2331, 17])
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_3_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 698.3908
+epoch: 19, Combined loss (CE + MMD): 674.8103
+epoch: 29, Combined loss (CE + MMD): 649.1817
+epoch: 39, Combined loss (CE + MMD): 628.9783
+epoch: 49, Combined loss (CE + MMD): 619.5301
+epoch: 59, Combined loss (CE + MMD): 616.4032
+epoch: 69, Combined loss (CE + MMD): 603.4504
+epoch: 79, Combined loss (CE + MMD): 612.2325
+epoch: 89, Combined loss (CE + MMD): 590.2709
+epoch: 99, Combined loss (CE + MMD): 597.8599
+Logistic Regression start time: = 2025-01-17 20:19:56.311477
+Logistic Regression end time: = 2025-01-17 20:24:57.462247
+############### DCN Training using Logistic Regression Lasso ###############
+Treated Statistics ==>
+torch.Size([239, 17])
+Control Statistics ==>
+torch.Size([2331, 17])
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_3_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 710.1419
+epoch: 19, Combined loss (CE + MMD): 648.2483
+epoch: 29, Combined loss (CE + MMD): 663.2337
+epoch: 39, Combined loss (CE + MMD): 632.6325
+epoch: 49, Combined loss (CE + MMD): 617.6920
+epoch: 59, Combined loss (CE + MMD): 601.9513
+epoch: 69, Combined loss (CE + MMD): 615.9406
+epoch: 79, Combined loss (CE + MMD): 595.3616
+epoch: 89, Combined loss (CE + MMD): 609.5167
+epoch: 99, Combined loss (CE + MMD): 590.2522
+Logistic Regression Lasso start time: = 2025-01-17 20:24:57.462275
+Logistic Regression Lasso end time: = 2025-01-17 20:29:58.012448
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+Treated Statistics ==>
+torch.Size([58, 17])
+Control Statistics ==>
+torch.Size([584, 17])
+.. Evaluation started ..
+bias_att: 0.06655974338412182
+policy_value: 0.7804166666666666
+Risk: 0.21958333333333335
+atc_pred: 0.023255813953488372
+att_pred: 0.017241379310344827
+err_fact: 0.16666666666666666
+############### DCN Testing using SAE E2E ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([58, 17])
+Control Statistics ==>
+torch.Size([584, 17])
+.. Evaluation started ..
+bias_att: 0.15276663993584594
+policy_value: 0.805731364275668
+Risk: 0.19426863572433195
+atc_pred: -0.011627906976744186
+att_pred: 0.10344827586206896
+err_fact: 0.1526479750778816
+############### DCN Testing using SAE Stacked all layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([58, 17])
+Control Statistics ==>
+torch.Size([584, 17])
+.. Evaluation started ..
+bias_att: 0.08380112269446664
+policy_value: 0.7713651151151151
+Risk: 0.22863488488488493
+atc_pred: 0.05813953488372093
+att_pred: 0.034482758620689655
+err_fact: 0.16355140186915887
+############### DCN Testing using SAE cur layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([58, 17])
+Control Statistics ==>
+torch.Size([584, 17])
+.. Evaluation started ..
+bias_att: 0.10104250200481146
+policy_value: 0.8042369901547116
+Risk: 0.19576300984528838
+atc_pred: 0.046511627906976744
+att_pred: 0.05172413793103448
+err_fact: 0.1557632398753894
+Treated Statistics ==>
+torch.Size([58, 17])
+Control Statistics ==>
+torch.Size([584, 17])
+############### DCN Testing using LR ###############
+.. Evaluation started ..
+bias_att: 0.08380112269446664
+policy_value: 0.7702546296296297
+Risk: 0.22974537037037035
+atc_pred: 0.046511627906976744
+att_pred: 0.034482758620689655
+err_fact: 0.20404984423676012
+Treated Statistics ==>
+torch.Size([58, 17])
+Control Statistics ==>
+torch.Size([584, 17])
+############### DCN Testing using LR Lasso ###############
+.. Evaluation started ..
+bias_att: 0.014835605453087333
+policy_value: 0.7386039886039886
+Risk: 0.26139601139601143
+atc_pred: 0.09302325581395349
+att_pred: -0.034482758620689655
+err_fact: 0.16510903426791276
+########### 400 epochs ###########
+----------------------------------------
+iter_id: 4
+----------------------------------------
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+Numpy Test Statistics:
+torch.Size([642, 19])
+torch.Size([642, 1])
+----------- Training and evaluation phase ------------
+############### Propensity Score neural net Training ###############
+.. Training started ..
+Saved model path: ./Propensity_Model/NN_PS_model_iter_id_4_epoch_50_lr_0.001_mmd.pth
+Epoch: 25, loss: 15.255216289311647, correct: 2324/2570, accuracy: 0.9042801556420234
+Epoch: 50, loss: 14.850048054009676, correct: 2330/2570, accuracy: 0.9066147859922179
+Saved model..
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+############### DCN Training using NN ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/NN_DCN_model_iter_id_4_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 724.8255
+epoch: 19, Combined loss (CE + MMD): 678.9654
+epoch: 29, Combined loss (CE + MMD): 686.9515
+epoch: 39, Combined loss (CE + MMD): 657.6136
+epoch: 49, Combined loss (CE + MMD): 633.6112
+epoch: 59, Combined loss (CE + MMD): 643.8908
+epoch: 69, Combined loss (CE + MMD): 649.2581
+epoch: 79, Combined loss (CE + MMD): 622.4965
+epoch: 89, Combined loss (CE + MMD): 617.2264
+epoch: 99, Combined loss (CE + MMD): 623.1670
+Neural Net start time: = 2025-01-17 20:30:02.575300
+Neural Net end time: = 2025-01-17 20:35:08.159427
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'train_set': <torch.utils.data.dataset.TensorDataset object at 0x14ddccf03f10>, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1, 'input_nodes': 17}
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.03301194898876143
+Epoch: 200, loss: 0.022396208235511073
+Epoch: 300, loss: 0.020784512725601226
+Epoch: 400, loss: 0.020094549772042183
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 14.92971780244261, correct: 2314/2570, accuracy: 0.9003891050583658
+Epoch: 50, loss: 14.277809981256723, correct: 2332/2570, accuracy: 0.9073929961089494
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08575594678153227
+Epoch: 200, loss: 0.08570416887969147
+Epoch: 300, loss: 0.08215998481085271
+Epoch: 400, loss: 0.08076464242221397
+----- Training SAE -----
+Epoch: 100, loss: 0.08866440477194609
+Epoch: 200, loss: 0.0856813397028564
+Epoch: 300, loss: 0.08663148074238389
+Epoch: 400, loss: 0.08571932216485341
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.699208304286003, correct: 2322/2570, accuracy: 0.9035019455252918
+Epoch: 50, loss: 15.039715979248285, correct: 2321/2570, accuracy: 0.9031128404669261
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08670513906780584
+Epoch: 200, loss: 0.07714595549084523
+Epoch: 300, loss: 0.08162172221475178
+Epoch: 400, loss: 0.08267191613529935
+----- Training SAE -----
+Epoch: 100, loss: 0.0928576714646669
+Epoch: 200, loss: 0.08970914311982968
+Epoch: 300, loss: 0.09172144716168627
+Epoch: 400, loss: 0.09276546307919938
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.964143447577953, correct: 2321/2570, accuracy: 0.9031128404669261
+Epoch: 50, loss: 14.980141840875149, correct: 2327/2570, accuracy: 0.9054474708171206
+Training completed..
+---------------------------------------------------------------------------
+End to End SAE training
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/SAE_E2E_DCN_model_iter_id_4_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 687.5254
+epoch: 19, Combined loss (CE + MMD): 649.3429
+epoch: 29, Combined loss (CE + MMD): 626.3848
+epoch: 39, Combined loss (CE + MMD): 602.8518
+epoch: 49, Combined loss (CE + MMD): 617.6640
+epoch: 59, Combined loss (CE + MMD): 604.9275
+epoch: 69, Combined loss (CE + MMD): 580.9021
+epoch: 79, Combined loss (CE + MMD): 595.3549
+epoch: 89, Combined loss (CE + MMD): 576.8620
+epoch: 99, Combined loss (CE + MMD): 550.5298
+SAE E2E start time: = 2025-01-17 20:40:12.933336
+SAE E2E end time: = 2025-01-17 20:45:15.177023
+---------------------------------------------------------------------------
+----------Layer wise greedy stacked SAE training - All layers----------
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/SAE_stacked_all_DCN_model_iter_id_4_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 714.8866
+epoch: 19, Combined loss (CE + MMD): 678.4411
+epoch: 29, Combined loss (CE + MMD): 659.3885
+epoch: 39, Combined loss (CE + MMD): 639.0007
+epoch: 49, Combined loss (CE + MMD): 657.6159
+epoch: 59, Combined loss (CE + MMD): 619.7870
+epoch: 69, Combined loss (CE + MMD): 617.4058
+epoch: 79, Combined loss (CE + MMD): 615.8925
+epoch: 89, Combined loss (CE + MMD): 616.1537
+epoch: 99, Combined loss (CE + MMD): 614.7704
+SAE all layer active start time: = 2025-01-17 20:45:15.177051
+SAE all layer active end time: = 2025-01-17 20:50:15.865388
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_4_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 688.6429
+epoch: 19, Combined loss (CE + MMD): 657.6783
+epoch: 29, Combined loss (CE + MMD): 657.2926
+epoch: 39, Combined loss (CE + MMD): 640.3283
+epoch: 49, Combined loss (CE + MMD): 635.3990
+epoch: 59, Combined loss (CE + MMD): 619.2191
+epoch: 69, Combined loss (CE + MMD): 611.7977
+epoch: 79, Combined loss (CE + MMD): 607.3405
+epoch: 89, Combined loss (CE + MMD): 594.8449
+epoch: 99, Combined loss (CE + MMD): 587.9033
+SAE cur layer active start time: = 2025-01-17 20:50:15.865418
+SAE all layer active end time: = 2025-01-17 20:55:18.259029
+############### DCN Training using Logistic Regression ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_4_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 695.3485
+epoch: 19, Combined loss (CE + MMD): 635.4015
+epoch: 29, Combined loss (CE + MMD): 637.1519
+epoch: 39, Combined loss (CE + MMD): 606.8783
+epoch: 49, Combined loss (CE + MMD): 597.3703
+epoch: 59, Combined loss (CE + MMD): 619.1699
+epoch: 69, Combined loss (CE + MMD): 597.0988
+epoch: 79, Combined loss (CE + MMD): 584.6069
+epoch: 89, Combined loss (CE + MMD): 573.4449
+epoch: 99, Combined loss (CE + MMD): 577.1421
+Logistic Regression start time: = 2025-01-17 20:55:18.259078
+Logistic Regression end time: = 2025-01-17 21:00:18.642234
+############### DCN Training using Logistic Regression Lasso ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_4_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 711.3210
+epoch: 19, Combined loss (CE + MMD): 662.4139
+epoch: 29, Combined loss (CE + MMD): 649.3086
+epoch: 39, Combined loss (CE + MMD): 604.5066
+epoch: 49, Combined loss (CE + MMD): 597.7879
+epoch: 59, Combined loss (CE + MMD): 626.3656
+epoch: 69, Combined loss (CE + MMD): 603.5309
+epoch: 79, Combined loss (CE + MMD): 580.8299
+epoch: 89, Combined loss (CE + MMD): 599.0350
+epoch: 99, Combined loss (CE + MMD): 583.3676
+Logistic Regression Lasso start time: = 2025-01-17 21:00:18.642259
+Logistic Regression Lasso end time: = 2025-01-17 21:05:18.703556
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+.. Evaluation started ..
+bias_att: 0.14927261227071478
+policy_value: 0.8054577464788732
+Risk: 0.19454225352112675
+atc_pred: 0.13978494623655913
+att_pred: -0.0392156862745098
+err_fact: 0.17289719626168223
+############### DCN Testing using SAE E2E ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+.. Evaluation started ..
+bias_att: 0.11005692599620498
+policy_value: 0.7938368055555555
+Risk: 0.20616319444444453
+atc_pred: -0.03225806451612903
+att_pred: 0.0
+err_fact: 0.1542056074766355
+############### DCN Testing using SAE Stacked all layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+.. Evaluation started ..
+bias_att: 0.11005692599620498
+policy_value: 0.8232323232323232
+Risk: 0.1767676767676768
+atc_pred: 0.1827956989247312
+att_pred: 0.0
+err_fact: 0.17289719626168223
+############### DCN Testing using SAE cur layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+.. Evaluation started ..
+bias_att: 0.07084123972169518
+policy_value: 0.8123219373219375
+Risk: 0.18767806267806253
+atc_pred: 0.06451612903225806
+att_pred: 0.0392156862745098
+err_fact: 0.1557632398753894
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+############### DCN Testing using LR ###############
+.. Evaluation started ..
+bias_att: 0.007590132827324431
+policy_value: 0.7777777777777777
+Risk: 0.22222222222222232
+atc_pred: -0.06451612903225806
+att_pred: 0.11764705882352941
+err_fact: 0.14485981308411214
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+############### DCN Testing using LR Lasso ###############
+.. Evaluation started ..
+bias_att: 0.11005692599620498
+policy_value: 0.7793989547038327
+Risk: 0.2206010452961673
+atc_pred: 0.0
+att_pred: 0.0
+err_fact: 0.16355140186915887
+########### 400 epochs ###########
+----------------------------------------
+iter_id: 5
+----------------------------------------
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+Numpy Test Statistics:
+torch.Size([642, 19])
+torch.Size([642, 1])
+----------- Training and evaluation phase ------------
+############### Propensity Score neural net Training ###############
+.. Training started ..
+Saved model path: ./Propensity_Model/NN_PS_model_iter_id_5_epoch_50_lr_0.001_mmd.pth
+Epoch: 25, loss: 15.155255742371082, correct: 2335/2570, accuracy: 0.9085603112840467
+Epoch: 50, loss: 14.401591403409839, correct: 2346/2570, accuracy: 0.91284046692607
+Saved model..
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+############### DCN Training using NN ###############
+Treated Statistics ==>
+torch.Size([235, 17])
+Control Statistics ==>
+torch.Size([2335, 17])
+Saved model path: ./DCNModel/NN_DCN_model_iter_id_5_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 690.9154
+epoch: 19, Combined loss (CE + MMD): 629.4991
+epoch: 29, Combined loss (CE + MMD): 629.2923
+epoch: 39, Combined loss (CE + MMD): 599.3378
+epoch: 49, Combined loss (CE + MMD): 594.5287
+epoch: 59, Combined loss (CE + MMD): 604.4949
+epoch: 69, Combined loss (CE + MMD): 574.4648
+epoch: 79, Combined loss (CE + MMD): 572.0667
+epoch: 89, Combined loss (CE + MMD): 572.4568
+epoch: 99, Combined loss (CE + MMD): 568.9364
+Neural Net start time: = 2025-01-17 21:05:23.244068
+Neural Net end time: = 2025-01-17 21:10:28.022987
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'train_set': <torch.utils.data.dataset.TensorDataset object at 0x14ddccf03f70>, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1, 'input_nodes': 17}
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.039284750129337666
+Epoch: 200, loss: 0.02244035392585728
+Epoch: 300, loss: 0.019672976996473693
+Epoch: 400, loss: 0.019417216811605072
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 14.897875480353832, correct: 2335/2570, accuracy: 0.9085603112840467
+Epoch: 50, loss: 13.940729543566704, correct: 2347/2570, accuracy: 0.9132295719844358
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08737603584189474
+Epoch: 200, loss: 0.08236387358219535
+Epoch: 300, loss: 0.08279781995548142
+Epoch: 400, loss: 0.08249868213394541
+----- Training SAE -----
+Epoch: 100, loss: 0.09136010789208943
+Epoch: 200, loss: 0.08711962305285313
+Epoch: 300, loss: 0.08778764652433219
+Epoch: 400, loss: 0.08655291565774399
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.740672037005424, correct: 2327/2570, accuracy: 0.9054474708171206
+Epoch: 50, loss: 15.218061737716198, correct: 2342/2570, accuracy: 0.911284046692607
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08644798076079216
+Epoch: 200, loss: 0.0856360289969562
+Epoch: 300, loss: 0.08126032251266786
+Epoch: 400, loss: 0.08106611025186232
+----- Training SAE -----
+Epoch: 100, loss: 0.09024930782156226
+Epoch: 200, loss: 0.09057123968262731
+Epoch: 300, loss: 0.08581122604233248
+Epoch: 400, loss: 0.09086707188391391
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.768343396484852, correct: 2323/2570, accuracy: 0.9038910505836576
+Epoch: 50, loss: 15.067345902323723, correct: 2329/2570, accuracy: 0.9062256809338521
+Training completed..
+---------------------------------------------------------------------------
+End to End SAE training
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([235, 17])
+Control Statistics ==>
+torch.Size([2335, 17])
+Saved model path: ./DCNModel/SAE_E2E_DCN_model_iter_id_5_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 719.0256
+epoch: 19, Combined loss (CE + MMD): 693.5381
+epoch: 29, Combined loss (CE + MMD): 670.4743
+epoch: 39, Combined loss (CE + MMD): 651.3477
+epoch: 49, Combined loss (CE + MMD): 633.0481
+epoch: 59, Combined loss (CE + MMD): 621.3645
+epoch: 69, Combined loss (CE + MMD): 636.6284
+epoch: 79, Combined loss (CE + MMD): 625.2216
+epoch: 89, Combined loss (CE + MMD): 607.8975
+epoch: 99, Combined loss (CE + MMD): 614.8455
+SAE E2E start time: = 2025-01-17 21:15:33.052601
+SAE E2E end time: = 2025-01-17 21:20:32.815121
+---------------------------------------------------------------------------
+----------Layer wise greedy stacked SAE training - All layers----------
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([235, 17])
+Control Statistics ==>
+torch.Size([2335, 17])
+Saved model path: ./DCNModel/SAE_stacked_all_DCN_model_iter_id_5_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 702.3134
+epoch: 19, Combined loss (CE + MMD): 664.6891
+epoch: 29, Combined loss (CE + MMD): 645.9461
+epoch: 39, Combined loss (CE + MMD): 633.2437
+epoch: 49, Combined loss (CE + MMD): 633.9816
+epoch: 59, Combined loss (CE + MMD): 618.0179
+epoch: 69, Combined loss (CE + MMD): 621.9626
+epoch: 79, Combined loss (CE + MMD): 618.3352
+epoch: 89, Combined loss (CE + MMD): 593.3691
+epoch: 99, Combined loss (CE + MMD): 627.9357
+SAE all layer active start time: = 2025-01-17 21:20:32.815151
+SAE all layer active end time: = 2025-01-17 21:25:33.545161
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([235, 17])
+Control Statistics ==>
+torch.Size([2335, 17])
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_5_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 738.3964
+epoch: 19, Combined loss (CE + MMD): 670.8164
+epoch: 29, Combined loss (CE + MMD): 648.3270
+epoch: 39, Combined loss (CE + MMD): 633.0216
+epoch: 49, Combined loss (CE + MMD): 641.2741
+epoch: 59, Combined loss (CE + MMD): 635.3387
+epoch: 69, Combined loss (CE + MMD): 643.5435
+epoch: 79, Combined loss (CE + MMD): 645.7028
+epoch: 89, Combined loss (CE + MMD): 624.2731
+epoch: 99, Combined loss (CE + MMD): 612.7736
+SAE cur layer active start time: = 2025-01-17 21:25:33.545222
+SAE all layer active end time: = 2025-01-17 21:30:34.102294
+############### DCN Training using Logistic Regression ###############
+Treated Statistics ==>
+torch.Size([235, 17])
+Control Statistics ==>
+torch.Size([2335, 17])
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_5_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 698.1148
+epoch: 19, Combined loss (CE + MMD): 660.0456
+epoch: 29, Combined loss (CE + MMD): 629.6767
+epoch: 39, Combined loss (CE + MMD): 610.4275
+epoch: 49, Combined loss (CE + MMD): 601.3580
+epoch: 59, Combined loss (CE + MMD): 619.9473
+epoch: 69, Combined loss (CE + MMD): 575.5798
+epoch: 79, Combined loss (CE + MMD): 589.4492
+epoch: 89, Combined loss (CE + MMD): 565.9356
+epoch: 99, Combined loss (CE + MMD): 587.7040
+Logistic Regression start time: = 2025-01-17 21:30:34.102340
+Logistic Regression end time: = 2025-01-17 21:35:33.301747
+############### DCN Training using Logistic Regression Lasso ###############
+Treated Statistics ==>
+torch.Size([235, 17])
+Control Statistics ==>
+torch.Size([2335, 17])
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_5_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 722.1691
+epoch: 19, Combined loss (CE + MMD): 675.3295
+epoch: 29, Combined loss (CE + MMD): 668.2299
+epoch: 39, Combined loss (CE + MMD): 644.0308
+epoch: 49, Combined loss (CE + MMD): 635.2177
+epoch: 59, Combined loss (CE + MMD): 642.1749
+epoch: 69, Combined loss (CE + MMD): 617.5582
+epoch: 79, Combined loss (CE + MMD): 592.9297
+epoch: 89, Combined loss (CE + MMD): 593.3858
+epoch: 99, Combined loss (CE + MMD): 580.1957
+Logistic Regression Lasso start time: = 2025-01-17 21:35:33.301776
+Logistic Regression Lasso end time: = 2025-01-17 21:40:32.885159
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+Treated Statistics ==>
+torch.Size([62, 17])
+Control Statistics ==>
+torch.Size([580, 17])
+.. Evaluation started ..
+bias_att: 0.04642014162077106
+policy_value: 0.7787162162162162
+Risk: 0.22128378378378377
+atc_pred: -0.06097560975609756
+att_pred: 0.04838709677419355
+err_fact: 0.1573208722741433
+############### DCN Testing using SAE E2E ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([62, 17])
+Control Statistics ==>
+torch.Size([580, 17])
+.. Evaluation started ..
+bias_att: 0.018095987411487005
+policy_value: 0.7690476190476191
+Risk: 0.2309523809523809
+atc_pred: 0.036585365853658534
+att_pred: -0.016129032258064516
+err_fact: 0.16666666666666666
+############### DCN Testing using SAE Stacked all layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([62, 17])
+Control Statistics ==>
+torch.Size([580, 17])
+.. Evaluation started ..
+bias_att: 0.0019669551534224894
+policy_value: 0.7764084507042254
+Risk: 0.22359154929577463
+atc_pred: 0.04878048780487805
+att_pred: 0.0
+err_fact: 0.16978193146417445
+############### DCN Testing using SAE cur layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([62, 17])
+Control Statistics ==>
+torch.Size([580, 17])
+.. Evaluation started ..
+bias_att: 0.014162077104642026
+policy_value: 0.7753378378378379
+Risk: 0.22466216216216206
+atc_pred: -0.012195121951219513
+att_pred: 0.016129032258064516
+err_fact: 0.16043613707165108
+Treated Statistics ==>
+torch.Size([62, 17])
+Control Statistics ==>
+torch.Size([580, 17])
+############### DCN Testing using LR ###############
+.. Evaluation started ..
+bias_att: 0.24390243902439024
+policy_value: 0.8146929824561403
+Risk: 0.1853070175438597
+atc_pred: 0.25609756097560976
+att_pred: -0.24193548387096775
+err_fact: 0.17601246105919002
+Treated Statistics ==>
+torch.Size([62, 17])
+Control Statistics ==>
+torch.Size([580, 17])
+############### DCN Testing using LR Lasso ###############
+.. Evaluation started ..
+bias_att: 0.06648308418568055
+policy_value: 0.7711267605633803
+Risk: 0.22887323943661975
+atc_pred: 0.08536585365853659
+att_pred: -0.06451612903225806
+err_fact: 0.16510903426791276
+########### 400 epochs ###########
+----------------------------------------
+iter_id: 6
+----------------------------------------
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+Numpy Test Statistics:
+torch.Size([642, 19])
+torch.Size([642, 1])
+----------- Training and evaluation phase ------------
+############### Propensity Score neural net Training ###############
+.. Training started ..
+Saved model path: ./Propensity_Model/NN_PS_model_iter_id_6_epoch_50_lr_0.001_mmd.pth
+Epoch: 25, loss: 15.37508488446474, correct: 2338/2570, accuracy: 0.909727626459144
+Epoch: 50, loss: 14.733850963413715, correct: 2341/2570, accuracy: 0.9108949416342412
+Saved model..
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+############### DCN Training using NN ###############
+Treated Statistics ==>
+torch.Size([234, 17])
+Control Statistics ==>
+torch.Size([2336, 17])
+Saved model path: ./DCNModel/NN_DCN_model_iter_id_6_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 728.4469
+epoch: 19, Combined loss (CE + MMD): 669.7483
+epoch: 29, Combined loss (CE + MMD): 660.6277
+epoch: 39, Combined loss (CE + MMD): 661.2479
+epoch: 49, Combined loss (CE + MMD): 655.2092
+epoch: 59, Combined loss (CE + MMD): 629.4365
+epoch: 69, Combined loss (CE + MMD): 629.9271
+epoch: 79, Combined loss (CE + MMD): 609.8302
+epoch: 89, Combined loss (CE + MMD): 600.2752
+epoch: 99, Combined loss (CE + MMD): 597.7032
+Neural Net start time: = 2025-01-17 21:40:37.374212
+Neural Net end time: = 2025-01-17 21:45:42.578907
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'train_set': <torch.utils.data.dataset.TensorDataset object at 0x14dd04352b60>, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1, 'input_nodes': 17}
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.03694004675856343
+Epoch: 200, loss: 0.022412693438430626
+Epoch: 300, loss: 0.019561167743148995
+Epoch: 400, loss: 0.018898664260812013
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 14.870484132319689, correct: 2347/2570, accuracy: 0.9132295719844358
+Epoch: 50, loss: 13.921687481924891, correct: 2348/2570, accuracy: 0.9136186770428015
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08966506373735121
+Epoch: 200, loss: 0.08513359417334015
+Epoch: 300, loss: 0.08386062324782949
+Epoch: 400, loss: 0.085188946330253
+----- Training SAE -----
+Epoch: 100, loss: 0.08853323914018678
+Epoch: 200, loss: 0.08855976164340973
+Epoch: 300, loss: 0.08765666895074609
+Epoch: 400, loss: 0.09066383761388284
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.853127121925354, correct: 2332/2570, accuracy: 0.9073929961089494
+Epoch: 50, loss: 14.590033020824194, correct: 2351/2570, accuracy: 0.9147859922178988
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.0861823860509896
+Epoch: 200, loss: 0.08157648449694668
+Epoch: 300, loss: 0.08037574561657729
+Epoch: 400, loss: 0.08062734969972092
+----- Training SAE -----
+Epoch: 100, loss: 0.08701003099113334
+Epoch: 200, loss: 0.08762076989184191
+Epoch: 300, loss: 0.08925299925936593
+Epoch: 400, loss: 0.08679889915166078
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.367916330695152, correct: 2342/2570, accuracy: 0.911284046692607
+Epoch: 50, loss: 15.053016811609268, correct: 2347/2570, accuracy: 0.9132295719844358
+Training completed..
+---------------------------------------------------------------------------
+End to End SAE training
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([234, 17])
+Control Statistics ==>
+torch.Size([2336, 17])
+Saved model path: ./DCNModel/SAE_E2E_DCN_model_iter_id_6_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 695.9984
+epoch: 19, Combined loss (CE + MMD): 679.3676
+epoch: 29, Combined loss (CE + MMD): 652.4558
+epoch: 39, Combined loss (CE + MMD): 656.2830
+epoch: 49, Combined loss (CE + MMD): 637.3322
+epoch: 59, Combined loss (CE + MMD): 626.4797
+epoch: 69, Combined loss (CE + MMD): 627.5491
+epoch: 79, Combined loss (CE + MMD): 596.3249
+epoch: 89, Combined loss (CE + MMD): 608.3150
+epoch: 99, Combined loss (CE + MMD): 600.7529
+SAE E2E start time: = 2025-01-17 21:50:47.503800
+SAE E2E end time: = 2025-01-17 21:55:48.350220
+---------------------------------------------------------------------------
+----------Layer wise greedy stacked SAE training - All layers----------
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([234, 17])
+Control Statistics ==>
+torch.Size([2336, 17])
+Saved model path: ./DCNModel/SAE_stacked_all_DCN_model_iter_id_6_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 702.7037
+epoch: 19, Combined loss (CE + MMD): 667.2085
+epoch: 29, Combined loss (CE + MMD): 672.5918
+epoch: 39, Combined loss (CE + MMD): 637.1533
+epoch: 49, Combined loss (CE + MMD): 622.9392
+epoch: 59, Combined loss (CE + MMD): 630.6344
+epoch: 69, Combined loss (CE + MMD): 639.1353
+epoch: 79, Combined loss (CE + MMD): 616.8676
+epoch: 89, Combined loss (CE + MMD): 614.1156
+epoch: 99, Combined loss (CE + MMD): 605.7706
+SAE all layer active start time: = 2025-01-17 21:55:48.350254
+SAE all layer active end time: = 2025-01-17 22:00:50.297373
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([234, 17])
+Control Statistics ==>
+torch.Size([2336, 17])
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_6_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 697.2514
+epoch: 19, Combined loss (CE + MMD): 661.6574
+epoch: 29, Combined loss (CE + MMD): 658.0219
+epoch: 39, Combined loss (CE + MMD): 638.3264
+epoch: 49, Combined loss (CE + MMD): 640.3415
+epoch: 59, Combined loss (CE + MMD): 623.8393
+epoch: 69, Combined loss (CE + MMD): 628.4696
+epoch: 79, Combined loss (CE + MMD): 609.4427
+epoch: 89, Combined loss (CE + MMD): 604.2167
+epoch: 99, Combined loss (CE + MMD): 580.8472
+SAE cur layer active start time: = 2025-01-17 22:00:50.297402
+SAE all layer active end time: = 2025-01-17 22:05:49.904635
+############### DCN Training using Logistic Regression ###############
+Treated Statistics ==>
+torch.Size([234, 17])
+Control Statistics ==>
+torch.Size([2336, 17])
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_6_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 704.4183
+epoch: 19, Combined loss (CE + MMD): 657.3725
+epoch: 29, Combined loss (CE + MMD): 649.5848
+epoch: 39, Combined loss (CE + MMD): 633.7625
+epoch: 49, Combined loss (CE + MMD): 632.5605
+epoch: 59, Combined loss (CE + MMD): 616.9891
+epoch: 69, Combined loss (CE + MMD): 594.1588
+epoch: 79, Combined loss (CE + MMD): 608.0488
+epoch: 89, Combined loss (CE + MMD): 580.1149
+epoch: 99, Combined loss (CE + MMD): 601.0082
+Logistic Regression start time: = 2025-01-17 22:05:49.904680
+Logistic Regression end time: = 2025-01-17 22:10:49.766672
+############### DCN Training using Logistic Regression Lasso ###############
+Treated Statistics ==>
+torch.Size([234, 17])
+Control Statistics ==>
+torch.Size([2336, 17])
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_6_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 733.9382
+epoch: 19, Combined loss (CE + MMD): 679.5776
+epoch: 29, Combined loss (CE + MMD): 651.4578
+epoch: 39, Combined loss (CE + MMD): 648.3153
+epoch: 49, Combined loss (CE + MMD): 639.8415
+epoch: 59, Combined loss (CE + MMD): 617.5110
+epoch: 69, Combined loss (CE + MMD): 630.3040
+epoch: 79, Combined loss (CE + MMD): 618.3307
+epoch: 89, Combined loss (CE + MMD): 634.2576
+epoch: 99, Combined loss (CE + MMD): 614.4402
+Logistic Regression Lasso start time: = 2025-01-17 22:10:49.766743
+Logistic Regression Lasso end time: = 2025-01-17 22:15:48.786454
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+Treated Statistics ==>
+torch.Size([63, 17])
+Control Statistics ==>
+torch.Size([579, 17])
+.. Evaluation started ..
+bias_att: 0.06878306878306883
+policy_value: 0.7137962962962964
+Risk: 0.2862037037037036
+atc_pred: 0.024691358024691357
+att_pred: 0.06349206349206349
+err_fact: 0.16199376947040497
+############### DCN Testing using SAE E2E ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([63, 17])
+Control Statistics ==>
+torch.Size([579, 17])
+.. Evaluation started ..
+bias_att: 0.02116402116402122
+policy_value: 0.763599537037037
+Risk: 0.23640046296296302
+atc_pred: 0.12345679012345678
+att_pred: 0.015873015873015872
+err_fact: 0.1573208722741433
+############### DCN Testing using SAE Stacked all layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([63, 17])
+Control Statistics ==>
+torch.Size([579, 17])
+.. Evaluation started ..
+bias_att: 0.10052910052910058
+policy_value: 0.7109375
+Risk: 0.2890625
+atc_pred: -0.09876543209876543
+att_pred: 0.09523809523809523
+err_fact: 0.1573208722741433
+############### DCN Testing using SAE cur layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([63, 17])
+Control Statistics ==>
+torch.Size([579, 17])
+.. Evaluation started ..
+bias_att: 0.05291005291005296
+policy_value: 0.7077546296296297
+Risk: 0.29224537037037035
+atc_pred: -0.012345679012345678
+att_pred: 0.047619047619047616
+err_fact: 0.16199376947040497
+Treated Statistics ==>
+torch.Size([63, 17])
+Control Statistics ==>
+torch.Size([579, 17])
+############### DCN Testing using LR ###############
+.. Evaluation started ..
+bias_att: 0.10582010582010576
+policy_value: 0.751984126984127
+Risk: 0.24801587301587302
+atc_pred: 0.20987654320987653
+att_pred: -0.1111111111111111
+err_fact: 0.16666666666666666
+Treated Statistics ==>
+torch.Size([63, 17])
+Control Statistics ==>
+torch.Size([579, 17])
+############### DCN Testing using LR Lasso ###############
+.. Evaluation started ..
+bias_att: 0.03703703703703709
+policy_value: 0.7078189300411523
+Risk: 0.29218106995884774
+atc_pred: -0.04938271604938271
+att_pred: 0.031746031746031744
+err_fact: 0.1573208722741433
+########### 400 epochs ###########
+----------------------------------------
+iter_id: 7
+----------------------------------------
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+Numpy Test Statistics:
+torch.Size([642, 19])
+torch.Size([642, 1])
+----------- Training and evaluation phase ------------
+############### Propensity Score neural net Training ###############
+.. Training started ..
+Saved model path: ./Propensity_Model/NN_PS_model_iter_id_7_epoch_50_lr_0.001_mmd.pth
+Epoch: 25, loss: 15.438008803874254, correct: 2335/2570, accuracy: 0.9085603112840467
+Epoch: 50, loss: 14.757937151938677, correct: 2340/2570, accuracy: 0.9105058365758755
+Saved model..
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+############### DCN Training using NN ###############
+Treated Statistics ==>
+torch.Size([236, 17])
+Control Statistics ==>
+torch.Size([2334, 17])
+Saved model path: ./DCNModel/NN_DCN_model_iter_id_7_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 679.3796
+epoch: 19, Combined loss (CE + MMD): 665.8094
+epoch: 29, Combined loss (CE + MMD): 659.4187
+epoch: 39, Combined loss (CE + MMD): 623.5140
+epoch: 49, Combined loss (CE + MMD): 626.4664
+epoch: 59, Combined loss (CE + MMD): 614.2993
+epoch: 69, Combined loss (CE + MMD): 594.0511
+epoch: 79, Combined loss (CE + MMD): 608.6546
+epoch: 89, Combined loss (CE + MMD): 581.1301
+epoch: 99, Combined loss (CE + MMD): 586.2812
+Neural Net start time: = 2025-01-17 22:15:53.327090
+Neural Net end time: = 2025-01-17 22:20:58.439471
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'train_set': <torch.utils.data.dataset.TensorDataset object at 0x14ddccf03f10>, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1, 'input_nodes': 17}
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.02400434584023408
+Epoch: 200, loss: 0.01801972547661007
+Epoch: 300, loss: 0.015971395876948482
+Epoch: 400, loss: 0.012688565976273866
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.356239825487137, correct: 2339/2570, accuracy: 0.9101167315175097
+Epoch: 50, loss: 14.182034377008677, correct: 2346/2570, accuracy: 0.91284046692607
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08082704080475701
+Epoch: 200, loss: 0.08147777653770683
+Epoch: 300, loss: 0.07913395316328531
+Epoch: 400, loss: 0.08433754319026146
+----- Training SAE -----
+Epoch: 100, loss: 0.08547511862383948
+Epoch: 200, loss: 0.0866400920038606
+Epoch: 300, loss: 0.0859782258623544
+Epoch: 400, loss: 0.08756479906079209
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 16.40579565614462, correct: 2334/2570, accuracy: 0.9081712062256809
+Epoch: 50, loss: 15.331724241375923, correct: 2338/2570, accuracy: 0.909727626459144
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08394409228622178
+Epoch: 200, loss: 0.07795241741854468
+Epoch: 300, loss: 0.07947499111846641
+Epoch: 400, loss: 0.07678991970088747
+----- Training SAE -----
+Epoch: 100, loss: 0.09145649402965735
+Epoch: 200, loss: 0.08868644837244058
+Epoch: 300, loss: 0.08615107383625006
+Epoch: 400, loss: 0.08864210647197417
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 16.029664002358913, correct: 2336/2570, accuracy: 0.9089494163424124
+Epoch: 50, loss: 15.4927416741848, correct: 2332/2570, accuracy: 0.9073929961089494
+Training completed..
+---------------------------------------------------------------------------
+End to End SAE training
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([236, 17])
+Control Statistics ==>
+torch.Size([2334, 17])
+Saved model path: ./DCNModel/SAE_E2E_DCN_model_iter_id_7_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 721.4064
+epoch: 19, Combined loss (CE + MMD): 661.1578
+epoch: 29, Combined loss (CE + MMD): 639.4923
+epoch: 39, Combined loss (CE + MMD): 637.0711
+epoch: 49, Combined loss (CE + MMD): 644.5005
+epoch: 59, Combined loss (CE + MMD): 652.9508
+epoch: 69, Combined loss (CE + MMD): 598.8779
+epoch: 79, Combined loss (CE + MMD): 604.0263
+epoch: 89, Combined loss (CE + MMD): 587.0219
+epoch: 99, Combined loss (CE + MMD): 585.9077
+SAE E2E start time: = 2025-01-17 22:26:03.748999
+SAE E2E end time: = 2025-01-17 22:31:03.823927
+---------------------------------------------------------------------------
+----------Layer wise greedy stacked SAE training - All layers----------
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([236, 17])
+Control Statistics ==>
+torch.Size([2334, 17])
+Saved model path: ./DCNModel/SAE_stacked_all_DCN_model_iter_id_7_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 699.7576
+epoch: 19, Combined loss (CE + MMD): 652.6272
+epoch: 29, Combined loss (CE + MMD): 639.1583
+epoch: 39, Combined loss (CE + MMD): 623.5494
+epoch: 49, Combined loss (CE + MMD): 620.1732
+epoch: 59, Combined loss (CE + MMD): 624.6230
+epoch: 69, Combined loss (CE + MMD): 598.6948
+epoch: 79, Combined loss (CE + MMD): 595.2300
+epoch: 89, Combined loss (CE + MMD): 602.3008
+epoch: 99, Combined loss (CE + MMD): 604.9030
+SAE all layer active start time: = 2025-01-17 22:31:03.823969
+SAE all layer active end time: = 2025-01-17 22:36:05.444131
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([236, 17])
+Control Statistics ==>
+torch.Size([2334, 17])
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_7_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 696.7862
+epoch: 19, Combined loss (CE + MMD): 651.0669
+epoch: 29, Combined loss (CE + MMD): 643.5119
+epoch: 39, Combined loss (CE + MMD): 644.9025
+epoch: 49, Combined loss (CE + MMD): 630.3712
+epoch: 59, Combined loss (CE + MMD): 625.5186
+epoch: 69, Combined loss (CE + MMD): 607.4641
+epoch: 79, Combined loss (CE + MMD): 629.4052
+epoch: 89, Combined loss (CE + MMD): 598.4461
+epoch: 99, Combined loss (CE + MMD): 599.9036
+SAE cur layer active start time: = 2025-01-17 22:36:05.444161
+SAE all layer active end time: = 2025-01-17 22:41:07.086523
+############### DCN Training using Logistic Regression ###############
+Treated Statistics ==>
+torch.Size([236, 17])
+Control Statistics ==>
+torch.Size([2334, 17])
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_7_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 672.4680
+epoch: 19, Combined loss (CE + MMD): 649.0372
+epoch: 29, Combined loss (CE + MMD): 626.5744
+epoch: 39, Combined loss (CE + MMD): 626.4296
+epoch: 49, Combined loss (CE + MMD): 594.2841
+epoch: 59, Combined loss (CE + MMD): 603.1001
+epoch: 69, Combined loss (CE + MMD): 608.0278
+epoch: 79, Combined loss (CE + MMD): 593.9837
+epoch: 89, Combined loss (CE + MMD): 591.4279
+epoch: 99, Combined loss (CE + MMD): 598.2178
+Logistic Regression start time: = 2025-01-17 22:41:07.086573
+Logistic Regression end time: = 2025-01-17 22:46:07.243035
+############### DCN Training using Logistic Regression Lasso ###############
+Treated Statistics ==>
+torch.Size([236, 17])
+Control Statistics ==>
+torch.Size([2334, 17])
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_7_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 718.7553
+epoch: 19, Combined loss (CE + MMD): 683.0441
+epoch: 29, Combined loss (CE + MMD): 664.7172
+epoch: 39, Combined loss (CE + MMD): 635.1179
+epoch: 49, Combined loss (CE + MMD): 647.2804
+epoch: 59, Combined loss (CE + MMD): 620.1383
+epoch: 69, Combined loss (CE + MMD): 632.9632
+epoch: 79, Combined loss (CE + MMD): 628.9136
+epoch: 89, Combined loss (CE + MMD): 620.0144
+epoch: 99, Combined loss (CE + MMD): 619.9432
+Logistic Regression Lasso start time: = 2025-01-17 22:46:07.243066
+Logistic Regression Lasso end time: = 2025-01-17 22:51:07.641293
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+Treated Statistics ==>
+torch.Size([61, 17])
+Control Statistics ==>
+torch.Size([581, 17])
+.. Evaluation started ..
+bias_att: 0.08888011060635995
+policy_value: 0.7221929516450064
+Risk: 0.2778070483549936
+atc_pred: 0.024096385542168676
+att_pred: 0.18032786885245902
+err_fact: 0.16666666666666666
+############### DCN Testing using SAE E2E ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([61, 17])
+Control Statistics ==>
+torch.Size([581, 17])
+.. Evaluation started ..
+bias_att: 0.03969978273750749
+policy_value: 0.7087525150905433
+Risk: 0.29124748490945673
+atc_pred: 0.024096385542168676
+att_pred: 0.13114754098360656
+err_fact: 0.16666666666666666
+############### DCN Testing using SAE Stacked all layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([61, 17])
+Control Statistics ==>
+torch.Size([581, 17])
+.. Evaluation started ..
+bias_att: 0.09144775824609908
+policy_value: 0.6868846694796062
+Risk: 0.31311533052039375
+atc_pred: 0.0
+att_pred: 0.0
+err_fact: 0.16199376947040497
+############### DCN Testing using SAE cur layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([61, 17])
+Control Statistics ==>
+torch.Size([581, 17])
+.. Evaluation started ..
+bias_att: 0.058660873000197435
+policy_value: 0.699280753968254
+Risk: 0.30071924603174605
+atc_pred: -0.012048192771084338
+att_pred: 0.03278688524590164
+err_fact: 0.16355140186915887
+Treated Statistics ==>
+torch.Size([61, 17])
+Control Statistics ==>
+torch.Size([581, 17])
+############### DCN Testing using LR ###############
+.. Evaluation started ..
+bias_att: 0.07248666798340911
+policy_value: 0.6838186077643909
+Risk: 0.31618139223560915
+atc_pred: -0.08433734939759036
+att_pred: 0.16393442622950818
+err_fact: 0.16199376947040497
+Treated Statistics ==>
+torch.Size([61, 17])
+Control Statistics ==>
+torch.Size([581, 17])
+############### DCN Testing using LR Lasso ###############
+.. Evaluation started ..
+bias_att: 0.025873987754295794
+policy_value: 0.6952566601689408
+Risk: 0.30474333983105917
+atc_pred: 0.03614457831325301
+att_pred: 0.06557377049180328
+err_fact: 0.16978193146417445
+########### 400 epochs ###########
+----------------------------------------
+iter_id: 8
+----------------------------------------
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+Numpy Test Statistics:
+torch.Size([642, 19])
+torch.Size([642, 1])
+----------- Training and evaluation phase ------------
+############### Propensity Score neural net Training ###############
+.. Training started ..
+Saved model path: ./Propensity_Model/NN_PS_model_iter_id_8_epoch_50_lr_0.001_mmd.pth
+Epoch: 25, loss: 15.279754262417555, correct: 2345/2570, accuracy: 0.9124513618677043
+Epoch: 50, loss: 14.482503034174442, correct: 2344/2570, accuracy: 0.9120622568093385
+Saved model..
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+############### DCN Training using NN ###############
+Treated Statistics ==>
+torch.Size([232, 17])
+Control Statistics ==>
+torch.Size([2338, 17])
+Saved model path: ./DCNModel/NN_DCN_model_iter_id_8_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 700.9667
+epoch: 19, Combined loss (CE + MMD): 689.8361
+epoch: 29, Combined loss (CE + MMD): 665.1964
+epoch: 39, Combined loss (CE + MMD): 625.2764
+epoch: 49, Combined loss (CE + MMD): 641.9018
+epoch: 59, Combined loss (CE + MMD): 619.7264
+epoch: 69, Combined loss (CE + MMD): 601.6718
+epoch: 79, Combined loss (CE + MMD): 587.4671
+epoch: 89, Combined loss (CE + MMD): 611.2073
+epoch: 99, Combined loss (CE + MMD): 603.8138
+Neural Net start time: = 2025-01-17 22:51:12.216483
+Neural Net end time: = 2025-01-17 22:56:18.218941
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'train_set': <torch.utils.data.dataset.TensorDataset object at 0x14ddcce7b850>, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1, 'input_nodes': 17}
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.02833025595518174
+Epoch: 200, loss: 0.02129246448569092
+Epoch: 300, loss: 0.01944934888915331
+Epoch: 400, loss: 0.018175860067806495
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.199998028576374, correct: 2346/2570, accuracy: 0.91284046692607
+Epoch: 50, loss: 14.447827505879104, correct: 2348/2570, accuracy: 0.9136186770428015
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08929199311468336
+Epoch: 200, loss: 0.08540102092112288
+Epoch: 300, loss: 0.07684364634347551
+Epoch: 400, loss: 0.08250150222469259
+----- Training SAE -----
+Epoch: 100, loss: 0.08832075318068634
+Epoch: 200, loss: 0.09018457579759905
+Epoch: 300, loss: 0.08504099950746254
+Epoch: 400, loss: 0.0905340008529616
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.861927397549152, correct: 2338/2570, accuracy: 0.909727626459144
+Epoch: 50, loss: 14.880187787115574, correct: 2343/2570, accuracy: 0.9116731517509727
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.0837867643546175
+Epoch: 200, loss: 0.08315140648204604
+Epoch: 300, loss: 0.08026315911132613
+Epoch: 400, loss: 0.08142209485357191
+----- Training SAE -----
+Epoch: 100, loss: 0.08784682634803984
+Epoch: 200, loss: 0.09301662969368475
+Epoch: 300, loss: 0.09009588289040106
+Epoch: 400, loss: 0.08390306856161282
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.898882754147053, correct: 2341/2570, accuracy: 0.9108949416342412
+Epoch: 50, loss: 14.761137638241053, correct: 2349/2570, accuracy: 0.9140077821011673
+Training completed..
+---------------------------------------------------------------------------
+End to End SAE training
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([232, 17])
+Control Statistics ==>
+torch.Size([2338, 17])
+Saved model path: ./DCNModel/SAE_E2E_DCN_model_iter_id_8_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 706.7643
+epoch: 19, Combined loss (CE + MMD): 679.6036
+epoch: 29, Combined loss (CE + MMD): 663.0273
+epoch: 39, Combined loss (CE + MMD): 633.1795
+epoch: 49, Combined loss (CE + MMD): 646.3175
+epoch: 59, Combined loss (CE + MMD): 632.0696
+epoch: 69, Combined loss (CE + MMD): 620.4931
+epoch: 79, Combined loss (CE + MMD): 611.0984
+epoch: 89, Combined loss (CE + MMD): 606.4061
+epoch: 99, Combined loss (CE + MMD): 595.9285
+SAE E2E start time: = 2025-01-17 23:01:23.687892
+SAE E2E end time: = 2025-01-17 23:06:23.794673
+---------------------------------------------------------------------------
+----------Layer wise greedy stacked SAE training - All layers----------
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([232, 17])
+Control Statistics ==>
+torch.Size([2338, 17])
+Saved model path: ./DCNModel/SAE_stacked_all_DCN_model_iter_id_8_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 726.4545
+epoch: 19, Combined loss (CE + MMD): 687.4260
+epoch: 29, Combined loss (CE + MMD): 677.2693
+epoch: 39, Combined loss (CE + MMD): 677.1322
+epoch: 49, Combined loss (CE + MMD): 637.5071
+epoch: 59, Combined loss (CE + MMD): 659.9364
+epoch: 69, Combined loss (CE + MMD): 615.0274
+epoch: 79, Combined loss (CE + MMD): 630.4552
+epoch: 89, Combined loss (CE + MMD): 619.7728
+epoch: 99, Combined loss (CE + MMD): 621.6614
+SAE all layer active start time: = 2025-01-17 23:06:23.794703
+SAE all layer active end time: = 2025-01-17 23:11:23.943590
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([232, 17])
+Control Statistics ==>
+torch.Size([2338, 17])
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_8_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 663.9908
+epoch: 19, Combined loss (CE + MMD): 642.2220
+epoch: 29, Combined loss (CE + MMD): 619.3482
+epoch: 39, Combined loss (CE + MMD): 618.0936
+epoch: 49, Combined loss (CE + MMD): 615.5904
+epoch: 59, Combined loss (CE + MMD): 598.8668
+epoch: 69, Combined loss (CE + MMD): 578.5476
+epoch: 79, Combined loss (CE + MMD): 591.4836
+epoch: 89, Combined loss (CE + MMD): 577.1059
+epoch: 99, Combined loss (CE + MMD): 562.8205
+SAE cur layer active start time: = 2025-01-17 23:11:23.943626
+SAE all layer active end time: = 2025-01-17 23:16:24.658593
+############### DCN Training using Logistic Regression ###############
+Treated Statistics ==>
+torch.Size([232, 17])
+Control Statistics ==>
+torch.Size([2338, 17])
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_8_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 708.6237
+epoch: 19, Combined loss (CE + MMD): 675.1089
+epoch: 29, Combined loss (CE + MMD): 661.7740
+epoch: 39, Combined loss (CE + MMD): 637.6336
+epoch: 49, Combined loss (CE + MMD): 641.7584
+epoch: 59, Combined loss (CE + MMD): 616.2129
+epoch: 69, Combined loss (CE + MMD): 619.0989
+epoch: 79, Combined loss (CE + MMD): 625.7503
+epoch: 89, Combined loss (CE + MMD): 617.9561
+epoch: 99, Combined loss (CE + MMD): 594.2349
+Logistic Regression start time: = 2025-01-17 23:16:24.660362
+Logistic Regression end time: = 2025-01-17 23:21:24.500950
+############### DCN Training using Logistic Regression Lasso ###############
+Treated Statistics ==>
+torch.Size([232, 17])
+Control Statistics ==>
+torch.Size([2338, 17])
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_8_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 705.0231
+epoch: 19, Combined loss (CE + MMD): 655.0864
+epoch: 29, Combined loss (CE + MMD): 647.0881
+epoch: 39, Combined loss (CE + MMD): 654.7765
+epoch: 49, Combined loss (CE + MMD): 641.3537
+epoch: 59, Combined loss (CE + MMD): 634.0449
+epoch: 69, Combined loss (CE + MMD): 614.4045
+epoch: 79, Combined loss (CE + MMD): 608.8714
+epoch: 89, Combined loss (CE + MMD): 606.4802
+epoch: 99, Combined loss (CE + MMD): 612.7502
+Logistic Regression Lasso start time: = 2025-01-17 23:21:24.500985
+Logistic Regression Lasso end time: = 2025-01-17 23:26:24.459616
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+Treated Statistics ==>
+torch.Size([65, 17])
+Control Statistics ==>
+torch.Size([577, 17])
+.. Evaluation started ..
+bias_att: 0.06309639727361255
+policy_value: 0.7265625
+Risk: 0.2734375
+atc_pred: 0.06329113924050633
+att_pred: -0.046153846153846156
+err_fact: 0.16666666666666666
+############### DCN Testing using SAE E2E ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([65, 17])
+Control Statistics ==>
+torch.Size([577, 17])
+.. Evaluation started ..
+bias_att: 0.059980525803310536
+policy_value: 0.7208994708994709
+Risk: 0.27910052910052907
+atc_pred: -0.0759493670886076
+att_pred: 0.07692307692307693
+err_fact: 0.16822429906542055
+############### DCN Testing using SAE Stacked all layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([65, 17])
+Control Statistics ==>
+torch.Size([577, 17])
+.. Evaluation started ..
+bias_att: 0.001557935735151006
+policy_value: 0.7218660968660968
+Risk: 0.2781339031339032
+atc_pred: -0.012658227848101266
+att_pred: 0.015384615384615385
+err_fact: 0.16199376947040497
+############### DCN Testing using SAE cur layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([65, 17])
+Control Statistics ==>
+torch.Size([577, 17])
+.. Evaluation started ..
+bias_att: 0.04459591041869515
+policy_value: 0.6911458333333332
+Risk: 0.30885416666666676
+atc_pred: -0.08860759493670886
+att_pred: 0.06153846153846154
+err_fact: 0.17445482866043613
+Treated Statistics ==>
+torch.Size([65, 17])
+Control Statistics ==>
+torch.Size([577, 17])
+############### DCN Testing using LR ###############
+.. Evaluation started ..
+bias_att: 0.04459591041869515
+policy_value: 0.7208994708994709
+Risk: 0.27910052910052907
+atc_pred: -0.05063291139240506
+att_pred: 0.06153846153846154
+err_fact: 0.16355140186915887
+Treated Statistics ==>
+torch.Size([65, 17])
+Control Statistics ==>
+torch.Size([577, 17])
+############### DCN Testing using LR Lasso ###############
+.. Evaluation started ..
+bias_att: 0.0907497565725413
+policy_value: 0.7165776353276354
+Risk: 0.2834223646723646
+atc_pred: -0.17721518987341772
+att_pred: 0.1076923076923077
+err_fact: 0.16666666666666666
+########### 400 epochs ###########
+----------------------------------------
+iter_id: 9
+----------------------------------------
+Numpy Train Statistics:
+torch.Size([2570, 19])
+torch.Size([2570, 1])
+Numpy Test Statistics:
+torch.Size([642, 19])
+torch.Size([642, 1])
+----------- Training and evaluation phase ------------
+############### Propensity Score neural net Training ###############
+.. Training started ..
+Saved model path: ./Propensity_Model/NN_PS_model_iter_id_9_epoch_50_lr_0.001_mmd.pth
+Epoch: 25, loss: 15.031083221721929, correct: 2324/2570, accuracy: 0.9042801556420234
+Epoch: 50, loss: 14.224373549222946, correct: 2328/2570, accuracy: 0.9058365758754864
+Saved model..
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+############### DCN Training using NN ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/NN_DCN_model_iter_id_9_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 725.0179
+epoch: 19, Combined loss (CE + MMD): 680.4270
+epoch: 29, Combined loss (CE + MMD): 674.7455
+epoch: 39, Combined loss (CE + MMD): 672.1132
+epoch: 49, Combined loss (CE + MMD): 644.9200
+epoch: 59, Combined loss (CE + MMD): 645.9137
+epoch: 69, Combined loss (CE + MMD): 621.5938
+epoch: 79, Combined loss (CE + MMD): 614.6481
+epoch: 89, Combined loss (CE + MMD): 617.1909
+epoch: 99, Combined loss (CE + MMD): 614.5816
+Neural Net start time: = 2025-01-17 23:26:29.033014
+Neural Net end time: = 2025-01-17 23:31:33.911377
+{'epochs': 400, 'lr': 0.001, 'batch_size': 32, 'shuffle': True, 'train_set': <torch.utils.data.dataset.TensorDataset object at 0x14dd04351c30>, 'sparsity_probability': 0.8, 'weight_decay': 0.0003, 'BETA': 0.1, 'input_nodes': 17}
+############### Propensity Score SAE net Training ###############
+.. Training started ..
+##### train e2e #########
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.028409777140175854
+Epoch: 200, loss: 0.01693325370182226
+Epoch: 300, loss: 0.015885442248143165
+Epoch: 400, loss: 0.013045810145774373
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 14.99950260296464, correct: 2319/2570, accuracy: 0.9023346303501946
+Epoch: 50, loss: 13.492245803587139, correct: 2340/2570, accuracy: 0.9105058365758755
+########## train layer wise all layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08140779764931878
+Epoch: 200, loss: 0.0793787051498154
+Epoch: 300, loss: 0.07880423190417113
+Epoch: 400, loss: 0.08155351628859837
+----- Training SAE -----
+Epoch: 100, loss: 0.09059936323283631
+Epoch: 200, loss: 0.08601335104968813
+Epoch: 300, loss: 0.08599043582324628
+Epoch: 400, loss: 0.08380728352952886
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 15.870743080973625, correct: 2317/2570, accuracy: 0.901556420233463
+Epoch: 50, loss: 15.087180532515049, correct: 2317/2570, accuracy: 0.901556420233463
+########## train layer wise only newly stacked layer active ############
+Training mode: train
+----- Training SAE -----
+Epoch: 100, loss: 0.08351290851463507
+Epoch: 200, loss: 0.08178849936819371
+Epoch: 300, loss: 0.07803078846615037
+Epoch: 400, loss: 0.07573827770021227
+----- Training SAE -----
+Epoch: 100, loss: 0.09214576830466588
+Epoch: 200, loss: 0.08316454144171727
+Epoch: 300, loss: 0.08570820815217348
+Epoch: 400, loss: 0.08992185489630994
+.. Propensity score evaluation started using Sparse AE..
+Epoch: 25, loss: 16.49438988044858, correct: 2312/2570, accuracy: 0.8996108949416343
+Epoch: 50, loss: 15.137662254273891, correct: 2340/2570, accuracy: 0.9105058365758755
+Training completed..
+---------------------------------------------------------------------------
+End to End SAE training
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/SAE_E2E_DCN_model_iter_id_9_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 725.5944
+epoch: 19, Combined loss (CE + MMD): 673.6301
+epoch: 29, Combined loss (CE + MMD): 656.8540
+epoch: 39, Combined loss (CE + MMD): 661.1773
+epoch: 49, Combined loss (CE + MMD): 641.1274
+epoch: 59, Combined loss (CE + MMD): 638.0942
+epoch: 69, Combined loss (CE + MMD): 627.7909
+epoch: 79, Combined loss (CE + MMD): 616.3813
+epoch: 89, Combined loss (CE + MMD): 628.8830
+epoch: 99, Combined loss (CE + MMD): 623.1638
+SAE E2E start time: = 2025-01-17 23:36:40.286561
+SAE E2E end time: = 2025-01-17 23:41:41.956435
+---------------------------------------------------------------------------
+----------Layer wise greedy stacked SAE training - All layers----------
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/SAE_stacked_all_DCN_model_iter_id_9_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 714.5195
+epoch: 19, Combined loss (CE + MMD): 675.7476
+epoch: 29, Combined loss (CE + MMD): 663.1022
+epoch: 39, Combined loss (CE + MMD): 650.7947
+epoch: 49, Combined loss (CE + MMD): 640.2094
+epoch: 59, Combined loss (CE + MMD): 631.3547
+epoch: 69, Combined loss (CE + MMD): 614.3530
+epoch: 79, Combined loss (CE + MMD): 612.7592
+epoch: 89, Combined loss (CE + MMD): 601.9612
+epoch: 99, Combined loss (CE + MMD): 603.6201
+SAE all layer active start time: = 2025-01-17 23:41:41.956470
+SAE all layer active end time: = 2025-01-17 23:46:43.440171
+---------------------------------------------------------------------------
+Layer wise greedy stacked SAE training - Current layers
+---------------------------------------------------------------------------
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+############### DCN Training using SAE ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/SAE_stacked_cur_DCN_model_iter_id_9_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 704.4881
+epoch: 19, Combined loss (CE + MMD): 676.2694
+epoch: 29, Combined loss (CE + MMD): 666.2836
+epoch: 39, Combined loss (CE + MMD): 647.1970
+epoch: 49, Combined loss (CE + MMD): 645.1328
+epoch: 59, Combined loss (CE + MMD): 616.9028
+epoch: 69, Combined loss (CE + MMD): 621.7803
+epoch: 79, Combined loss (CE + MMD): 604.3361
+epoch: 89, Combined loss (CE + MMD): 641.5037
+epoch: 99, Combined loss (CE + MMD): 606.2890
+SAE cur layer active start time: = 2025-01-17 23:46:43.440215
+SAE all layer active end time: = 2025-01-17 23:51:44.987441
+############### DCN Training using Logistic Regression ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/LR_DCN_model_iter_id_9_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 692.0909
+epoch: 19, Combined loss (CE + MMD): 680.3306
+epoch: 29, Combined loss (CE + MMD): 651.7080
+epoch: 39, Combined loss (CE + MMD): 631.7601
+epoch: 49, Combined loss (CE + MMD): 627.5054
+epoch: 59, Combined loss (CE + MMD): 652.1340
+epoch: 69, Combined loss (CE + MMD): 616.8651
+epoch: 79, Combined loss (CE + MMD): 634.4040
+epoch: 89, Combined loss (CE + MMD): 619.7275
+epoch: 99, Combined loss (CE + MMD): 600.3214
+Logistic Regression start time: = 2025-01-17 23:51:44.987484
+Logistic Regression end time: = 2025-01-17 23:56:45.184891
+############### DCN Training using Logistic Regression Lasso ###############
+Treated Statistics ==>
+torch.Size([246, 17])
+Control Statistics ==>
+torch.Size([2324, 17])
+Saved model path: ./DCNModel/LR_Lasso_DCN_model_iter_id_9_epoch_100_lr_0.0001_mmd.pth
+.. Training started ..
+cuda:0
+epoch: 9, Combined loss (CE + MMD): 679.6071
+epoch: 19, Combined loss (CE + MMD): 654.0371
+epoch: 29, Combined loss (CE + MMD): 622.1278
+epoch: 39, Combined loss (CE + MMD): 603.5194
+epoch: 49, Combined loss (CE + MMD): 616.8020
+epoch: 59, Combined loss (CE + MMD): 594.0790
+epoch: 69, Combined loss (CE + MMD): 606.5382
+epoch: 79, Combined loss (CE + MMD): 589.7788
+epoch: 89, Combined loss (CE + MMD): 579.8753
+epoch: 99, Combined loss (CE + MMD): 568.6750
+Logistic Regression Lasso start time: = 2025-01-17 23:56:45.184913
+Logistic Regression Lasso end time: = 2025-01-18 00:01:46.326237
+----------- Testing phase ------------
+############### DCN Testing using NN ###############
+.. Propensity score evaluation started using NN..
+.. Propensity score evaluation completed using NN..
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+.. Evaluation started ..
+bias_att: 0.05186590765338395
+policy_value: 0.7225694444444444
+Risk: 0.2774305555555556
+atc_pred: -0.15053763440860216
+att_pred: 0.1568627450980392
+err_fact: 0.1573208722741433
+############### DCN Testing using SAE E2E ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+.. Evaluation started ..
+bias_att: 0.04617330803289056
+policy_value: 0.7616666666666667
+Risk: 0.23833333333333329
+atc_pred: 0.07526881720430108
+att_pred: 0.058823529411764705
+err_fact: 0.16510903426791276
+############### DCN Testing using SAE Stacked all layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+.. Evaluation started ..
+bias_att: 0.12460468058191017
+policy_value: 0.7098214285714286
+Risk: 0.2901785714285714
+atc_pred: -0.03225806451612903
+att_pred: -0.0196078431372549
+err_fact: 0.16978193146417445
+############### DCN Testing using SAE cur layer active ###############
+.. Propensity score evaluation started using Sparse AE ..
+.. Propensity score evaluation completed Sparse AE ..
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+.. Evaluation started ..
+bias_att: 0.3795066413662239
+policy_value: 0.7665598290598292
+Risk: 0.23344017094017078
+atc_pred: 0.20430107526881722
+att_pred: -0.27450980392156865
+err_fact: 0.1791277258566978
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+############### DCN Testing using LR ###############
+.. Evaluation started ..
+bias_att: 0.006957621758380758
+policy_value: 0.7237282463186078
+Risk: 0.27627175368139223
+atc_pred: -0.021505376344086023
+att_pred: 0.09803921568627451
+err_fact: 0.1557632398753894
+Treated Statistics ==>
+torch.Size([51, 17])
+Control Statistics ==>
+torch.Size([591, 17])
+############### DCN Testing using LR Lasso ###############
+.. Evaluation started ..
+bias_att: 0.20303605313092976
+policy_value: 0.7033227848101266
+Risk: 0.29667721518987344
+atc_pred: 0.07526881720430108
+att_pred: -0.09803921568627451
+err_fact: 0.205607476635514
+
+-------------------------------------------------
+
+Using NN, bias_att: 0.11245331540058259, SD: 0.11057260953212047
+Using NN, policy_risk: 0.27176872303498245, SD: 0.044341869556414545
+
+-------------------------------------------------
+
+Using SAE E2E, bias_att: 0.09942469309481763, SD: 0.11566946081788951
+Using SAE E2E, policy_risk: 0.2589230336159347, SD: 0.040619330776492206
+
+-------------------------------------------------
+
+Using SAE stacked all layer active, bias_att: 0.10962391310839652, SD: 0.08051938034760858
+Using SAE stacked all layer active, policy_risk: 0.2803813958793583, SD: 0.059557209396268095
+
+-------------------------------------------------
+
+Using SAE stacked cur layer active, bias_att: 0.12715378083230514, SD: 0.13114149816083823
+Using SAE stacked cur layer active, policy_risk: 0.2745076909159187, SD: 0.056395131295936124
+
+-------------------------------------------------
+
+Using Logistic Regression, bias_att: 0.1163218126358593, SD: 0.10133771391571801
+Using Logistic Regression, policy_risk: 0.27884134429718993, SD: 0.05632375405662728
+
+-------------------------------------------------
+
+Using Lasso Logistic Regression, bias_att: 0.11210609558769033, SD: 0.11370011401954036
+Using Lasso Logistic Regression, policy_risk: 0.2841002732471341, SD: 0.03921061647745212
+----------------------------------------
