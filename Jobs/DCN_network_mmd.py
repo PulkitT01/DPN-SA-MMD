@@ -6,54 +6,48 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.utils.data import DataLoader
 
-from DCN_mmd import DCN 
+from DCN_mmd import DCN  # <--- The DCN definition above
 import os
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def MMD(x, y, kernel="rbf"):
     """
-    Empirical Maximum Mean Discrepancy (MMD) between two samples x and y.
-    x: [n, d], y: [m, d]
-    Returns a scalar MMD value.
+    Empirical Maximum Mean Discrepancy (MMD) between two samples x and y in [batch_size, d].
+    We use an RBF kernel with multiple bandwidths.
     """
-    # Compute dot products
-    xx = torch.mm(x, x.t())  # [n, n]
-    yy = torch.mm(y, y.t())  # [m, m]
-    xy = torch.mm(x, y.t())  # [n, m]
-    
-    # Compute squared norms
-    rx = (x ** 2).sum(dim=1, keepdim=True)  # shape [n, 1]
-    ry = (y ** 2).sum(dim=1, keepdim=True)  # shape [m, 1]
-    
-    # Pairwise squared Euclidean
-    dxx = rx + rx.t() - 2.0 * xx  # [n, n]
-    dyy = ry + ry.t() - 2.0 * yy  # [m, m]
-    dxy = rx + ry.t() - 2.0 * xy  # [n, m]
-    
-    # We'll use an RBF kernel with multiple bandwidths
+    xx = torch.mm(x, x.t())   # [n, n]
+    yy = torch.mm(y, y.t())   # [m, m]
+    xy = torch.mm(x, y.t())   # [n, m]
+
+    rx = (x**2).sum(dim=1, keepdim=True)  # shape [n,1]
+    ry = (y**2).sum(dim=1, keepdim=True)  # shape [m,1]
+
+    # Pairwise squared distances
+    dxx = rx + rx.t() - 2.*xx
+    dyy = ry + ry.t() - 2.*yy
+    dxy = rx + ry.t() - 2.*xy
+
+    # Example RBF with multiple bandwidths
     bandwidth_range = [10, 15, 20, 50]
-    XX = YY = XY = 0.0
+    XX = YY = XY = 0.
     for a in bandwidth_range:
-        XX += torch.exp(-0.5 * dxx / a)
-        YY += torch.exp(-0.5 * dyy / a)
-        XY += torch.exp(-0.5 * dxy / a)
-    
-    return XX.mean() + YY.mean() - 2.0 * XY.mean()
+        XX += torch.exp(-0.5*dxx/a)
+        YY += torch.exp(-0.5*dyy/a)
+        XY += torch.exp(-0.5*dxy/a)
+
+    return XX.mean() + YY.mean() - 2.*XY.mean()
 
 
 class DCN_network:
 
     def train(self, train_parameters, device):
         """
-        Train the DCN model, where we add an MMD term between the predicted
-        distribution (softmax of logits) and the true (one-hot) distribution.
-        
-        We alternate:
-          - Even epochs: Train the "treated" (Y1) tower
-          - Odd epochs:  Train the "control" (Y0) tower
+        Train the DCN model with CrossEntropy + MMD, 
+        comparing predicted distribution vs. true distribution (one-hot) 
+        for TREATED and CONTROL separately.
         """
-        # === Unpack parameters ===
+        # Unpack parameters
         epochs = train_parameters["epochs"]
         treated_batch_size = train_parameters["treated_batch_size"]
         control_batch_size = train_parameters["control_batch_size"]
@@ -65,12 +59,12 @@ class DCN_network:
         control_set_train = train_parameters["control_set_train"]
         input_nodes = train_parameters["input_nodes"]
 
-        # MMD hyperparam
+        # Lambda for MMD
         lambda_mmd = train_parameters.get("lambda_mmd", 0.1)
 
         print("Saved model path: {0}".format(model_save_path))
 
-        # === DataLoaders ===
+        # DataLoaders
         treated_data_loader = DataLoader(
             treated_set_train,
             batch_size=treated_batch_size,
@@ -84,23 +78,23 @@ class DCN_network:
             num_workers=0
         )
 
-        # === Initialize network + optimizer + CE loss
+        # Instantiate DCN
         network = DCN(training_flag=True, input_nodes=input_nodes).to(device)
         optimizer = optim.Adam(network.parameters(), lr=lr)
         ce_loss = nn.CrossEntropyLoss()
 
         print(".. Training started ..")
-        print(device)
+        print(f"Device: {device}")
 
         for epoch in range(epochs):
             network.train()
             total_loss = 0.0
 
-            # ============================================
-            # (A) Train TREATED tower on even epochs
-            # ============================================
+            # =========================================
+            # (A) Train TREATED tower (Y1) on even epochs
+            # =========================================
             if epoch % 2 == 0:
-                # Enable grads for Y1 tower
+                # Enable Y1 tower
                 network.hidden1_Y1.weight.requires_grad = True
                 network.hidden1_Y1.bias.requires_grad = True
                 network.hidden2_Y1.weight.requires_grad = True
@@ -108,7 +102,7 @@ class DCN_network:
                 network.out_Y1.weight.requires_grad = True
                 network.out_Y1.bias.requires_grad = True
 
-                # Disable grads for Y0 tower
+                # Disable Y0 tower
                 network.hidden1_Y0.weight.requires_grad = False
                 network.hidden1_Y0.bias.requires_grad = False
                 network.hidden2_Y0.weight.requires_grad = False
@@ -118,21 +112,20 @@ class DCN_network:
 
                 for batch in treated_data_loader:
                     covariates_X, ps_score, y_f = batch
-
                     covariates_X = covariates_X.to(device)
                     ps_score = ps_score.squeeze().to(device)
                     y_f = y_f.to(device, dtype=torch.long)
 
-                    # Forward
-                    logits_y1, _ = network(covariates_X, ps_score)  # Y1 tower
+                    # Forward -> (logits_y1, logits_y0), but we only optimize y1
+                    logits_y1, _ = network(covariates_X, ps_score)
 
                     # (1) Cross-entropy
                     loss_ce = ce_loss(logits_y1, y_f)
 
-                    # (2) MMD (predicted dist vs. one-hot of labels)
-                    p1 = F.softmax(logits_y1, dim=1)
-                    num_classes = logits_y1.shape[1]
-                    y_f_onehot = F.one_hot(y_f, num_classes=num_classes).float()
+                    # (2) MMD: compare softmax(logits_y1) vs. one-hot(y_f)
+                    p1 = F.softmax(logits_y1, dim=1)  # shape [B, #classes=2]
+                    y_f_onehot = F.one_hot(y_f, num_classes=p1.shape[1]).float()
+
                     loss_mmd_val = MMD(p1, y_f_onehot, kernel="rbf")
 
                     # Combine
@@ -145,11 +138,11 @@ class DCN_network:
 
                     total_loss += loss.item()
 
-            # ============================================
-            # (B) Train CONTROL tower on odd epochs
-            # ============================================
+            # =========================================
+            # (B) Train CONTROL tower (Y0) on odd epochs
+            # =========================================
             else:
-                # Enable grads for Y0 tower
+                # Enable Y0 tower
                 network.hidden1_Y0.weight.requires_grad = True
                 network.hidden1_Y0.bias.requires_grad = True
                 network.hidden2_Y0.weight.requires_grad = True
@@ -157,7 +150,7 @@ class DCN_network:
                 network.out_Y0.weight.requires_grad = True
                 network.out_Y0.bias.requires_grad = True
 
-                # Disable grads for Y1 tower
+                # Disable Y1 tower
                 network.hidden1_Y1.weight.requires_grad = False
                 network.hidden1_Y1.bias.requires_grad = False
                 network.hidden2_Y1.weight.requires_grad = False
@@ -167,38 +160,36 @@ class DCN_network:
 
                 for batch in control_data_loader:
                     covariates_X, ps_score, y_f = batch
-
                     covariates_X = covariates_X.to(device)
                     ps_score = ps_score.squeeze().to(device)
                     y_f = y_f.to(device, dtype=torch.long)
 
-                    # Forward
-                    _, logits_y0 = network(covariates_X, ps_score)  # Y0 tower
+                    # Forward -> (logits_y1, logits_y0), but we only optimize y0
+                    _, logits_y0 = network(covariates_X, ps_score)
 
                     # (1) Cross-entropy
                     loss_ce = ce_loss(logits_y0, y_f)
 
-                    # (2) MMD
+                    # (2) MMD: compare softmax(logits_y0) vs. one-hot(y_f)
                     p0 = F.softmax(logits_y0, dim=1)
-                    num_classes = logits_y0.shape[1]
-                    y_f_onehot = F.one_hot(y_f, num_classes=num_classes).float()
+                    y_f_onehot = F.one_hot(y_f, num_classes=p0.shape[1]).float()
+
                     loss_mmd_val = MMD(p0, y_f_onehot, kernel="rbf")
 
                     # Combine
                     loss = loss_ce + lambda_mmd * loss_mmd_val
 
-                    # Backprop
                     optimizer.zero_grad()
                     loss.backward()
                     optimizer.step()
 
                     total_loss += loss.item()
 
-            # Print out every 10 epochs or as you prefer
+            # Print progress every 10 epochs
             if epoch % 10 == 9:
                 print(f"Epoch {epoch+1}/{epochs}, total loss (CE+MMD): {total_loss:.4f}")
 
-        # Save model
+        # Save the final model
         torch.save(network.state_dict(), model_save_path)
         print(f"Model saved to: {model_save_path}")
 
@@ -206,48 +197,41 @@ class DCN_network:
     def eval(self, eval_parameters, device, input_nodes):
         """
         Evaluate the DCN on treated + control sets.
-        We'll do a forward pass and get Y1, Y0 predictions, then store them.
+        We'll do forward passes and record the predicted outcomes (y1_hat, y0_hat).
         """
         print(".. Evaluation started ..")
         treated_set = eval_parameters["treated_set"]
         control_set = eval_parameters["control_set"]
         model_path = eval_parameters["model_save_path"]
 
-        # Load trained network
+        # Load the model
         network = DCN(training_flag=False, input_nodes=input_nodes).to(device)
-        # Remove "weights_only=True" if your PyTorch version doesn't support it
         network.load_state_dict(torch.load(model_path, map_location=device))
         network.eval()
 
-        treated_data_loader = torch.utils.data.DataLoader(treated_set,
-                                                          shuffle=False, num_workers=0)
-        control_data_loader = torch.utils.data.DataLoader(control_set,
-                                                          shuffle=False, num_workers=0)
+        treated_data_loader = DataLoader(treated_set, shuffle=False, num_workers=0)
+        control_data_loader = DataLoader(control_set, shuffle=False, num_workers=0)
 
         ITE_dict_list = []
         predicted_ITE_list = []
-
         y_f_list = []
         y1_hat_list = []
         y0_hat_list = []
         e_list = []
         T_list = []
 
-        # --- Evaluate on treated set ---
+        # ---- Evaluate on Treated set ----
         for batch in treated_data_loader:
             covariates_X, ps_score, y_f, t, e = batch
-
             covariates_X = covariates_X.to(device)
             ps_score = ps_score.squeeze().to(device)
 
-            # Forward
             logits_y1, logits_y0 = network(covariates_X, ps_score)
             _, y1_hat = torch.max(logits_y1, dim=1)
             _, y0_hat = torch.max(logits_y0, dim=1)
 
             predicted_ITE = y1_hat - y0_hat
 
-            # Build a record
             ITE_dict_list.append(self.create_ITE_Dict(
                 covariates_X,
                 ps_score.item(),
@@ -264,14 +248,12 @@ class DCN_network:
             T_list.append(t)
             predicted_ITE_list.append(predicted_ITE.item())
 
-        # --- Evaluate on control set ---
+        # ---- Evaluate on Control set ----
         for batch in control_data_loader:
             covariates_X, ps_score, y_f, t, e = batch
-
             covariates_X = covariates_X.to(device)
             ps_score = ps_score.squeeze().to(device)
 
-            # Forward
             logits_y1, logits_y0 = network(covariates_X, ps_score)
             _, y1_hat = torch.max(logits_y1, dim=1)
             _, y0_hat = torch.max(logits_y0, dim=1)
@@ -290,9 +272,9 @@ class DCN_network:
             y_f_list.append(y_f.item())
             y1_hat_list.append(y1_hat.item())
             y0_hat_list.append(y0_hat.item())
+            predicted_ITE_list.append(predicted_ITE.item())
             e_list.append(e.item())
             T_list.append(t)
-            predicted_ITE_list.append(predicted_ITE.item())
 
         return {
             "predicted_ITE": predicted_ITE_list,
@@ -307,11 +289,11 @@ class DCN_network:
     @staticmethod
     def create_ITE_Dict(covariates_X, ps_score, y_f, y1_hat, y0_hat, predicted_ITE):
         """
-        Helper to package up results in a dictionary. Adjust as you wish.
+        Build a dictionary of data for each sample. 
+        Adjust or remove as you see fit.
         """
         result_dict = OrderedDict()
         covariate_list = [element.item() for element in covariates_X.flatten()]
-
         for idx, val in enumerate(covariate_list, start=1):
             result_dict[f"X{idx}"] = val
 
@@ -320,5 +302,4 @@ class DCN_network:
         result_dict["y1_hat"] = y1_hat
         result_dict["y0_hat"] = y0_hat
         result_dict["predicted_ITE"] = predicted_ITE
-
         return result_dict
