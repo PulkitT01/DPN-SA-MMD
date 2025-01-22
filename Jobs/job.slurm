@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --partition=gpu-single       # GPU partition
 #SBATCH --gres=gpu:1                 # Request 1 GPU
-#SBATCH --time=08:00:00              # Max runtime
+#SBATCH --time=12:00:00              # Max runtime
 #SBATCH --nodes=1
 #SBATCH --ntasks=2
 #SBATCH --mem=4gb                    # Memory
