@@ -132,10 +132,10 @@ class DPN_SA_Deep:
                                                          run_parameters["input_nodes"])
 
         # using SAE
-        model_path_e2e = "./DCNModel/SAE_E2E_DCN_model_iter_id_{0}_epoch_100_lr_0.0001.pth".format(iter_id)
-        model_path_stacked_all = "./DCNModel/SAE_stacked_all_DCN_model_iter_id_{0}_epoch_100_lr_0.0001.pth".format(
+        model_path_e2e = "./DCNModel/SAE_E2E_DCN_model_iter_id_{0}_epoch_400_lr_0.0001.pth".format(iter_id)
+        model_path_stacked_all = "./DCNModel/SAE_stacked_all_DCN_model_iter_id_{0}_epoch_400_lr_0.0001.pth".format(
             iter_id)
-        model_path_stacked_cur = "./DCNModel/SAE_stacked_cur_DCN_model_iter_id_{0}_epoch_100_lr_0.0001.pth".format(
+        model_path_stacked_cur = "./DCNModel/SAE_stacked_cur_DCN_model_iter_id_{0}_epoch_400_lr_0.0001.pth".format(
             iter_id)
 
         propensity_score_save_path_e2e = run_parameters["sae_e2e_prop_file"]
